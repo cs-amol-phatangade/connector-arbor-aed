@@ -1,0 +1,2103 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "eaf12624-2666-4702-b9ce-583f865c1103",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Arbor AED - 1.0.0",
+      "description": "Arbor AED secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Arbor",
+        "arbor-aed"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "ee4358f9-f6b9-4587-9cf4-bbb4a0dc4d0a",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves the Arbor Networks AED country codes and names based on the input parameters you have specified.",
+          "name": "Get Countries",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4b99e2ab-15ca-42ca-89ca-311f513fcca6",
+          "steps": [
+            {
+              "uuid": "4b99e2ab-15ca-42ca-89ca-311f513fcca6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "adb5c51e-cdf8-4b95-8622-f92b2d18d275",
+                "title": "Arbor AED: Get Countries",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "30666d61-d7cc-4ee6-bbb7-e8d05c306feb",
+              "@type": "WorkflowStep",
+              "name": "Get Countries",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_countries",
+                "operationTitle": "Get Countries",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1d09c578-559a-4414-8c39-512afefbf4ba",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Countries",
+              "sourceStep": "/api/3/workflow_steps/4b99e2ab-15ca-42ca-89ca-311f513fcca6",
+              "targetStep": "/api/3/workflow_steps/30666d61-d7cc-4ee6-bbb7-e8d05c306feb"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f2086a1b-6182-4be2-999b-5651a69a8dfa",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Creates an Arbor Networks AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
+          "name": "Create Inbound Protection Groups",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3025341c-4e15-4b67-ac95-19ba6de9ac70",
+          "steps": [
+            {
+              "uuid": "3025341c-4e15-4b67-ac95-19ba6de9ac70",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "06c9c5fe-83cd-46ea-b52d-97b69273ff50",
+                "title": "Arbor AED: Create Inbound Protection Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1bc9eca1-afb7-4b31-9453-f0bbb0ed204c",
+              "@type": "WorkflowStep",
+              "name": "Create Inbound Protection Groups",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "name": "",
+                  "prefixes": "",
+                  "serverType": "",
+                  "description": "",
+                  "active": true,
+                  "protectionLevel": "Low"
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "create_inbound_protection_groups",
+                "operationTitle": "Create Inbound Protection Groups",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a7a45f4d-b477-400d-81ce-2f70a4e3fa7b",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Inbound Protection Groups",
+              "sourceStep": "/api/3/workflow_steps/3025341c-4e15-4b67-ac95-19ba6de9ac70",
+              "targetStep": "/api/3/workflow_steps/1bc9eca1-afb7-4b31-9453-f0bbb0ed204c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e0c9b8d8-234a-4306-802d-8ed0b4a120ce",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Arbor Networks AED protection groups based on the input parameters you have specified.",
+          "name": "Get Inbound Protection Groups",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c138d291-c9d9-412e-a409-d43728ca48fc",
+          "steps": [
+            {
+              "uuid": "c138d291-c9d9-412e-a409-d43728ca48fc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "394c522e-e15e-41a1-a75e-9f69c2ac7a01",
+                "title": "Arbor AED: Get Inbound Protection Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "61231d97-1a39-4b66-a4da-49aeb88bc221",
+              "@type": "WorkflowStep",
+              "name": "Get Inbound Protection Groups",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "pgid": "",
+                  "name": "",
+                  "description": "",
+                  "protectionLevel": "",
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_inbound_protection_groups",
+                "operationTitle": "Get Inbound Protection Groups",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8124d4ac-8dc1-4291-9445-1e754f6b6ae7",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Inbound Protection Groups",
+              "sourceStep": "/api/3/workflow_steps/c138d291-c9d9-412e-a409-d43728ca48fc",
+              "targetStep": "/api/3/workflow_steps/61231d97-1a39-4b66-a4da-49aeb88bc221"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0e23dc9a-6d1b-4407-9b36-ee2d14339850",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Modifies the mode or the protection level for specific inbound protection groups based on the protection group IDs you have specified.",
+          "name": "Update Inbound Protection Groups",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/db6c186a-63b4-4be8-ac60-e601937cd08c",
+          "steps": [
+            {
+              "uuid": "db6c186a-63b4-4be8-ac60-e601937cd08c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "88559dc2-51d8-48a5-beb5-c140b425aaee",
+                "title": "Arbor AED: Update Inbound Protection Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "738a82d5-7d84-462f-a8f2-811d694427cb",
+              "@type": "WorkflowStep",
+              "name": "Update Inbound Protection Groups",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "pgid": "",
+                  "active": true,
+                  "protectionLevel": "Low"
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "update_inbound_protection_groups",
+                "operationTitle": "Update Inbound Protection Groups",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "924330ae-df78-42ca-8411-b0f3d9a5426f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Inbound Protection Groups",
+              "sourceStep": "/api/3/workflow_steps/db6c186a-63b4-4be8-ac60-e601937cd08c",
+              "targetStep": "/api/3/workflow_steps/738a82d5-7d84-462f-a8f2-811d694427cb"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ccd8072a-d7fd-40ee-9e06-b75062df04de",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more countries to the Arbor AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Add Inbound Blacklist Countries",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/23453ad4-2453-4d3d-9fca-92386726f9ef",
+          "steps": [
+            {
+              "uuid": "23453ad4-2453-4d3d-9fca-92386726f9ef",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f471b9d5-64ea-4da4-9f8d-bf00bfadeaa0",
+                "title": "Arbor AED: Add Inbound Blacklist Countries",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "01ffc671-b969-42f2-a7c2-450447b16485",
+              "@type": "WorkflowStep",
+              "name": "Add Inbound Blacklist Countries",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "country": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_inbound_blacklist_countries",
+                "operationTitle": "Add Inbound Blacklist Countries",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1bbfb8d2-fffd-47fb-a407-3f70886862c0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Inbound Blacklist Countries",
+              "sourceStep": "/api/3/workflow_steps/23453ad4-2453-4d3d-9fca-92386726f9ef",
+              "targetStep": "/api/3/workflow_steps/01ffc671-b969-42f2-a7c2-450447b16485"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a7db3455-2628-41df-aff8-1287a9c36175",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the inbound blacklisted countries or specific inbound blacklisted countries based on the input parameters you have specified. By default, 10 blacklisted countries are returned. To return blacklisted countries for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects countries that are globally blacklisted.",
+          "name": "Get Inbound Blacklisted Countries",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b797a1da-8ea9-4b6c-9c29-5cd505f6a7d2",
+          "steps": [
+            {
+              "uuid": "b797a1da-8ea9-4b6c-9c29-5cd505f6a7d2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "2dd07dc5-c97b-43fc-906f-40fab88ec5ee",
+                "title": "Arbor AED: Get Inbound Blacklisted Countries",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "184f5af4-2bee-4be4-b684-8ac9bea25de9",
+              "@type": "WorkflowStep",
+              "name": "Get Inbound Blacklisted Countries",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "country": "",
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_inbound_blacklisted_countries",
+                "operationTitle": "Get Inbound Blacklisted Countries",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f70e7dc7-48ef-4140-aa2b-80c14843079c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Inbound Blacklisted Countries",
+              "sourceStep": "/api/3/workflow_steps/b797a1da-8ea9-4b6c-9c29-5cd505f6a7d2",
+              "targetStep": "/api/3/workflow_steps/184f5af4-2bee-4be4-b684-8ac9bea25de9"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8ee61c05-8ed5-4faa-8f20-6e97f3dca37f",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more countries from the Arbor AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+          "name": "Remove Inbound Blacklisted Countries",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/74d06880-1170-418b-bbf7-1ce3999fe27a",
+          "steps": [
+            {
+              "uuid": "74d06880-1170-418b-bbf7-1ce3999fe27a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "53ddd5ba-650f-4f13-960e-7df45ca9b65b",
+                "title": "Arbor AED: Remove Inbound Blacklisted Countries",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1bdef007-84ac-4942-8042-cf530b2f8dd0",
+              "@type": "WorkflowStep",
+              "name": "Remove Inbound Blacklisted Countries",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "country": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_inbound_blacklisted_countries",
+                "operationTitle": "Remove Inbound Blacklisted Countries",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "eaa4d020-5095-4428-8001-1a57b43c1284",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Inbound Blacklisted Countries",
+              "sourceStep": "/api/3/workflow_steps/74d06880-1170-418b-bbf7-1ce3999fe27a",
+              "targetStep": "/api/3/workflow_steps/1bdef007-84ac-4942-8042-cf530b2f8dd0"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "603057fe-4805-48a7-b738-df6533887d98",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more domains to the Arbor AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Add Inbound Blacklist Domains",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/22667d3f-8c70-4aec-b24b-003cbc6ff18b",
+          "steps": [
+            {
+              "uuid": "22667d3f-8c70-4aec-b24b-003cbc6ff18b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "befd156e-3e6b-4508-a049-ffc7576f22f3",
+                "title": "Arbor AED: Add Inbound Blacklist Domains",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2c8077d4-3eb5-4f42-a07a-97f0d9beb7ad",
+              "@type": "WorkflowStep",
+              "name": "Add Inbound Blacklist Domains",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "domain": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_inbound_blacklist_domains",
+                "operationTitle": "Add Inbound Blacklist Domains",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5d6982a6-49ca-4f04-b492-9f91c05adf9f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Inbound Blacklist Domains",
+              "sourceStep": "/api/3/workflow_steps/22667d3f-8c70-4aec-b24b-003cbc6ff18b",
+              "targetStep": "/api/3/workflow_steps/2c8077d4-3eb5-4f42-a07a-97f0d9beb7ad"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d9e1db99-e29b-4f3e-8d02-c88803384b0b",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the inbound blacklisted domains or specific inbound blacklisted domains based on the input parameters you have specified. To return blacklisted domains for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+          "name": "Get Inbound Blacklisted Domains",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0780da3c-0b2a-43fc-a56e-fdb29c35ff21",
+          "steps": [
+            {
+              "uuid": "0780da3c-0b2a-43fc-a56e-fdb29c35ff21",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "3ea4d1f9-293b-484d-a6bc-cc061652e04d",
+                "title": "Arbor AED: Get Inbound Blacklisted Domains",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cf224547-968d-4491-b852-ee1f736bb8b7",
+              "@type": "WorkflowStep",
+              "name": "Get Inbound Blacklisted Domains",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "domain": "",
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_inbound_blacklisted_domains",
+                "operationTitle": "Get Inbound Blacklisted Domains",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "476a2536-16f6-443b-9cff-9548f0473363",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Inbound Blacklisted Domains",
+              "sourceStep": "/api/3/workflow_steps/0780da3c-0b2a-43fc-a56e-fdb29c35ff21",
+              "targetStep": "/api/3/workflow_steps/cf224547-968d-4491-b852-ee1f736bb8b7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "52b21306-17e7-4937-9869-563e0cde1c02",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more domains from the Arbor AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+          "name": "Remove Inbound Blacklisted Domains",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/fc94a100-aeef-4b3c-b87d-1432432e95e2",
+          "steps": [
+            {
+              "uuid": "fc94a100-aeef-4b3c-b87d-1432432e95e2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "74999f9b-25b7-4373-9338-c3d202f79d44",
+                "title": "Arbor AED: Remove Inbound Blacklisted Domains",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "84d0e355-2916-475d-a6fa-f214dd84746d",
+              "@type": "WorkflowStep",
+              "name": "Remove Inbound Blacklisted Domains",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "domain": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_inbound_blacklisted_domains",
+                "operationTitle": "Remove Inbound Blacklisted Domains",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "e201c5fd-06e9-48a0-b843-80bce683b801",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Inbound Blacklisted Domains",
+              "sourceStep": "/api/3/workflow_steps/fc94a100-aeef-4b3c-b87d-1432432e95e2",
+              "targetStep": "/api/3/workflow_steps/84d0e355-2916-475d-a6fa-f214dd84746d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f927b5db-b57b-46a2-ba78-2ba6d601cf78",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more hosts to the Arbor AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Add Inbound Blacklist Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8f2ff914-8187-4681-8908-5eae8c90dc59",
+          "steps": [
+            {
+              "uuid": "8f2ff914-8187-4681-8908-5eae8c90dc59",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4a4fef31-f51a-40d8-a5a8-0ba9b292a272",
+                "title": "Arbor AED: Add Inbound Blacklist Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9b528656-cff9-42ca-bc61-e5d46aad55c1",
+              "@type": "WorkflowStep",
+              "name": "Add Inbound Blacklist Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_inbound_blacklist_hosts",
+                "operationTitle": "Add Inbound Blacklist Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "aae468fb-71f7-4575-b083-cd68645dbcee",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Inbound Blacklist Hosts",
+              "sourceStep": "/api/3/workflow_steps/8f2ff914-8187-4681-8908-5eae8c90dc59",
+              "targetStep": "/api/3/workflow_steps/9b528656-cff9-42ca-bc61-e5d46aad55c1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ad2e137f-00d3-4b80-8a53-d3fa0eca38b0",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the inbound blacklisted hosts or specific inbound blacklisted hosts based on the input parameters you have specified. To return blacklisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+          "name": "Get Inbound Blacklisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/730fa7ad-2dd7-414f-bd66-7f06fc5d0ed1",
+          "steps": [
+            {
+              "uuid": "730fa7ad-2dd7-414f-bd66-7f06fc5d0ed1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "dcd1b649-4e61-417e-9004-25f99c787b05",
+                "title": "Arbor AED: Get Inbound Blacklisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d37c9db8-06fd-45aa-8a6c-93e2a1457d20",
+              "@type": "WorkflowStep",
+              "name": "Get Inbound Blacklisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": "",
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_inbound_blacklisted_hosts",
+                "operationTitle": "Get Inbound Blacklisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4474aacd-eec9-4508-9f07-4a5a234506d5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Inbound Blacklisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/730fa7ad-2dd7-414f-bd66-7f06fc5d0ed1",
+              "targetStep": "/api/3/workflow_steps/d37c9db8-06fd-45aa-8a6c-93e2a1457d20"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "833c2bb7-577c-4989-85a8-78f9745bfc6f",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more hosts or CIDRs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Remove Inbound Blacklisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9c86d01d-3a36-4271-943f-a306d346c4b7",
+          "steps": [
+            {
+              "uuid": "9c86d01d-3a36-4271-943f-a306d346c4b7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "2faa85ac-6905-4b27-a610-a12e2fcc47b8",
+                "title": "Arbor AED: Remove Inbound Blacklisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9c376874-97f8-4e46-ab62-d84da59cffac",
+              "@type": "WorkflowStep",
+              "name": "Remove Inbound Blacklisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_inbound_blacklisted_hosts",
+                "operationTitle": "Remove Inbound Blacklisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "34bbfabd-334f-4c28-9381-fa1a2b70ea0d",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Inbound Blacklisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/9c86d01d-3a36-4271-943f-a306d346c4b7",
+              "targetStep": "/api/3/workflow_steps/9c376874-97f8-4e46-ab62-d84da59cffac"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a9fcee07-7d6e-45d4-a44e-5deb629fd195",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more hosts to the Arbor AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
+          "name": "Add Inbound Whitelisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0966bedc-8c00-4818-bd25-854cf10c94e0",
+          "steps": [
+            {
+              "uuid": "0966bedc-8c00-4818-bd25-854cf10c94e0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ec792e1f-3186-4114-982b-676b30a61004",
+                "title": "Arbor AED: Add Inbound Whitelisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9f0c6d7f-5cc8-42e7-841b-882410c75c4c",
+              "@type": "WorkflowStep",
+              "name": "Add Inbound Whitelisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_inbound_whitelisted_hosts",
+                "operationTitle": "Add Inbound Whitelisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "42664cbe-71dc-46c8-b94a-179a9b9b18ef",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Inbound Whitelisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/0966bedc-8c00-4818-bd25-854cf10c94e0",
+              "targetStep": "/api/3/workflow_steps/9f0c6d7f-5cc8-42e7-841b-882410c75c4c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "15489460-8267-45dd-a834-c0dd69f49330",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the inbound whitelisted hosts or specific inbound whitelisted hosts based on the input parameters you have specified. By default, all whitelisted hosts are returned. To return whitelisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects hosts that are globally whitelisted.",
+          "name": "Get Inbound Whitelisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5b6daf58-8855-4ae9-83b2-4b50a2566570",
+          "steps": [
+            {
+              "uuid": "5b6daf58-8855-4ae9-83b2-4b50a2566570",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c51144cf-22f7-433a-a325-9e9796c8ec91",
+                "title": "Arbor AED: Get Inbound Whitelisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f3dcebe4-00db-440f-91ca-68cb6fd240db",
+              "@type": "WorkflowStep",
+              "name": "Get Inbound Whitelisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": "",
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_inbound_whitelisted_hosts",
+                "operationTitle": "Get Inbound Whitelisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3f9efa88-4650-44a0-96ea-5192904efa03",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Inbound Whitelisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/5b6daf58-8855-4ae9-83b2-4b50a2566570",
+              "targetStep": "/api/3/workflow_steps/f3dcebe4-00db-440f-91ca-68cb6fd240db"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "43edbba6-bb88-48ec-a226-f403b9c0ee4f",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more hosts or CIDRs from the Arbor AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Remove Inbound Whitelisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3fb64e57-cdd6-4b4e-8898-eb2578b37cf0",
+          "steps": [
+            {
+              "uuid": "3fb64e57-cdd6-4b4e-8898-eb2578b37cf0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "92facb9e-af3d-4898-8072-81d7552b3c7f",
+                "title": "Arbor AED: Remove Inbound Whitelisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "44d46984-36d2-4601-ac3c-91b138fb8dde",
+              "@type": "WorkflowStep",
+              "name": "Remove Inbound Whitelisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_inbound_whitelisted_hosts",
+                "operationTitle": "Remove Inbound Whitelisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3cb2876b-0523-4549-88c8-36c8f55fe936",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Inbound Whitelisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/3fb64e57-cdd6-4b4e-8898-eb2578b37cf0",
+              "targetStep": "/api/3/workflow_steps/44d46984-36d2-4601-ac3c-91b138fb8dde"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "89a61f46-cf46-44fa-a62d-c179f9ea426c",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more URLs to the Arbor AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Add Inbound Blacklist URLs",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/566fd282-87f4-4974-b763-6133cc80b3e0",
+          "steps": [
+            {
+              "uuid": "566fd282-87f4-4974-b763-6133cc80b3e0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "2d4c98cb-b404-4623-be8c-184d4e28b45c",
+                "title": "Arbor AED: Add Inbound Blacklist URLs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5c2611f7-990e-4acc-9cd7-f24115dab7ed",
+              "@type": "WorkflowStep",
+              "name": "Add Inbound Blacklist URLs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "url": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_inbound_blacklist_urls",
+                "operationTitle": "Add Inbound Blacklist URLs",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ce5b9bb0-fe55-488f-aad2-b347215a05b0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Inbound Blacklist URLs",
+              "sourceStep": "/api/3/workflow_steps/566fd282-87f4-4974-b763-6133cc80b3e0",
+              "targetStep": "/api/3/workflow_steps/5c2611f7-990e-4acc-9cd7-f24115dab7ed"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b152306f-8742-4635-b11c-fcb70204f87d",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the inbound blacklisted URLs or specific inbound blacklisted URLs based on the input parameters you have specified. To return blacklisted URLs for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects URLs that are globally blacklisted.",
+          "name": "Get Inbound Blacklisted URLs",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/16398b79-1ba3-4a1f-bfbb-7d0d7d12c5d7",
+          "steps": [
+            {
+              "uuid": "16398b79-1ba3-4a1f-bfbb-7d0d7d12c5d7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "14b51f26-a6e1-45bc-aa0f-34a867ebb479",
+                "title": "Arbor AED: Get Inbound Blacklisted URLs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4b13def4-9fb6-45d4-bc9f-71e5f37306bf",
+              "@type": "WorkflowStep",
+              "name": "Get Inbound Blacklisted URLs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "url": "",
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_inbound_blacklisted_urls",
+                "operationTitle": "Get Inbound Blacklisted URLs",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "adfe6bf7-9aac-4012-8b89-105eb1cc8378",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Inbound Blacklisted URLs",
+              "sourceStep": "/api/3/workflow_steps/16398b79-1ba3-4a1f-bfbb-7d0d7d12c5d7",
+              "targetStep": "/api/3/workflow_steps/4b13def4-9fb6-45d4-bc9f-71e5f37306bf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "76317a26-a561-4187-90f2-3cf557a09be4",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more URLs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "name": "Remove Inbound Blacklisted URLs",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e92300b3-6a87-4475-8c57-c0581a155ee0",
+          "steps": [
+            {
+              "uuid": "e92300b3-6a87-4475-8c57-c0581a155ee0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "372d9297-de36-4596-927a-1bbecbfc19df",
+                "title": "Arbor AED: Remove Inbound Blacklisted URLs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "61db57c7-5d2e-4dd9-bb22-53ce3e294ff3",
+              "@type": "WorkflowStep",
+              "name": "Remove Inbound Blacklisted URLs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "url": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_inbound_blacklisted_urls",
+                "operationTitle": "Remove Inbound Blacklisted URLs",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f6dbfd43-2072-4f4b-bc90-6729c3a0f365",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Inbound Blacklisted URLs",
+              "sourceStep": "/api/3/workflow_steps/e92300b3-6a87-4475-8c57-c0581a155ee0",
+              "targetStep": "/api/3/workflow_steps/61db57c7-5d2e-4dd9-bb22-53ce3e294ff3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4a145089-0b4a-4eec-a217-39cb1d1bddec",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more hosts to the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified.",
+          "name": "Add Outbound Blacklist Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/864948d0-0467-4cac-af36-5668831e01cd",
+          "steps": [
+            {
+              "uuid": "864948d0-0467-4cac-af36-5668831e01cd",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "04ab9bff-2dc2-463a-b5e8-5b84ce135698",
+                "title": "Arbor AED: Add Outbound Blacklist Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "568571bb-d5bd-4efa-b384-7195f3859252",
+              "@type": "WorkflowStep",
+              "name": "Add Outbound Blacklist Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_outbound_blacklist_hosts",
+                "operationTitle": "Add Outbound Blacklist Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8306a5ca-7ec1-4897-9e7d-30860116bc9e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Outbound Blacklist Hosts",
+              "sourceStep": "/api/3/workflow_steps/864948d0-0467-4cac-af36-5668831e01cd",
+              "targetStep": "/api/3/workflow_steps/568571bb-d5bd-4efa-b384-7195f3859252"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "81daee53-bec9-4cbc-b375-19eaf150707a",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the outbound blacklisted hosts or specific outbound blacklisted hosts based on the input parameters you have specified.",
+          "name": "Get Outbound Blacklisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b0f19e8a-0018-4beb-805f-0feac12fbf31",
+          "steps": [
+            {
+              "uuid": "b0f19e8a-0018-4beb-805f-0feac12fbf31",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "3d8cf07d-da55-4cf0-963d-be599093ba3c",
+                "title": "Arbor AED: Get Outbound Blacklisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "002735ba-cbea-489e-a88d-b2b5e08abb39",
+              "@type": "WorkflowStep",
+              "name": "Get Outbound Blacklisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": "",
+                  "updateTime": 0,
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_outbound_blacklisted_hosts",
+                "operationTitle": "Get Outbound Blacklisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "56e570a4-2c17-4bbe-9e93-1e935ee4d826",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Outbound Blacklisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/b0f19e8a-0018-4beb-805f-0feac12fbf31",
+              "targetStep": "/api/3/workflow_steps/002735ba-cbea-489e-a88d-b2b5e08abb39"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "199875bd-f07b-4d2c-a992-fd096c21fd6a",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
+          "name": "Remove Outbound Blacklisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/fe13ea90-893d-4911-97d7-a4f851079ed6",
+          "steps": [
+            {
+              "uuid": "fe13ea90-893d-4911-97d7-a4f851079ed6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "5816d584-5dd9-46f5-98f0-46d4b9090c21",
+                "title": "Arbor AED: Remove Outbound Blacklisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "189a4653-88b2-443e-a11a-7f0260178716",
+              "@type": "WorkflowStep",
+              "name": "Remove Outbound Blacklisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_outbound_blacklisted_hosts",
+                "operationTitle": "Remove Outbound Blacklisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5704f3e0-ebf1-4883-8ded-8e2c02961d63",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Outbound Blacklisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/fe13ea90-893d-4911-97d7-a4f851079ed6",
+              "targetStep": "/api/3/workflow_steps/189a4653-88b2-443e-a11a-7f0260178716"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7c4fcc40-33bb-49fc-8024-4bdb398b991a",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Adds one or more hosts to the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified.",
+          "name": "Add Outbound Whitelist Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0b758596-e17c-4f9d-ad82-6d2713bfd53a",
+          "steps": [
+            {
+              "uuid": "0b758596-e17c-4f9d-ad82-6d2713bfd53a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "614ec296-5eb3-4d93-92c6-5db351b9cc3c",
+                "title": "Arbor AED: Add Outbound Whitelist Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e5a16263-8204-447e-b381-ffe466ed9dd4",
+              "@type": "WorkflowStep",
+              "name": "Add Outbound Whitelist Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "add_outbound_whitelisted_hosts",
+                "operationTitle": "Add Outbound Whitelist Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "814c94c2-1189-4fa8-9e3e-39b1e15a2520",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Outbound Whitelist Hosts",
+              "sourceStep": "/api/3/workflow_steps/0b758596-e17c-4f9d-ad82-6d2713bfd53a",
+              "targetStep": "/api/3/workflow_steps/e5a16263-8204-447e-b381-ffe466ed9dd4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "efadf109-2c23-4be9-a9de-430ef46a94c0",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Retrieves all the outbound whitelisted hosts or specific outbound whitelisted hosts based on the input parameters you have specified.",
+          "name": "Get Outbound Whitelisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c066a633-d2fb-45f9-8b25-a7299c632734",
+          "steps": [
+            {
+              "uuid": "c066a633-d2fb-45f9-8b25-a7299c632734",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9b420e2c-1218-4ca0-be53-505cd248ad18",
+                "title": "Arbor AED: Get Outbound Whitelisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7ea78550-c2a7-4e3f-9330-6ae51c606727",
+              "@type": "WorkflowStep",
+              "name": "Get Outbound Whitelisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": "",
+                  "updateTime": 0,
+                  "direction": "",
+                  "page": "",
+                  "perPage": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "get_outbound_whitelisted_hosts",
+                "operationTitle": "Get Outbound Whitelisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ac5de22b-39a8-444d-81a0-593902d22062",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Outbound Whitelisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/c066a633-d2fb-45f9-8b25-a7299c632734",
+              "targetStep": "/api/3/workflow_steps/7ea78550-c2a7-4e3f-9330-6ae51c606727"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8cc79b73-fd5b-4cff-9e91-c4946aa11078",
+          "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
+          "triggerLimit": null,
+          "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
+          "name": "Remove Outbound Whitelisted Hosts",
+          "tag": "#Arbor AED",
+          "recordTags": [
+            "Arbor",
+            "arbor-aed"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9a1342fa-c3f5-4478-8dcf-f88256121f78",
+          "steps": [
+            {
+              "uuid": "9a1342fa-c3f5-4478-8dcf-f88256121f78",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "deb94335-85ed-46f5-b9c2-6fe5c576dc66",
+                "title": "Arbor AED: Remove Outbound Whitelisted Hosts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4aa20a73-3281-45fb-ad74-acfc76b2879d",
+              "@type": "WorkflowStep",
+              "name": "Remove Outbound Whitelisted Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Arbor AED",
+                "config": "''",
+                "params": {
+                  "hostAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "arbor-aed",
+                "operation": "remove_outbound_whitelisted_hosts",
+                "operationTitle": "Remove Outbound Whitelisted Hosts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5618eb82-afa6-457a-817e-c201e07164c5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Outbound Whitelisted Hosts",
+              "sourceStep": "/api/3/workflow_steps/9a1342fa-c3f5-4478-8dcf-f88256121f78",
+              "targetStep": "/api/3/workflow_steps/4aa20a73-3281-45fb-ad74-acfc76b2879d"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
