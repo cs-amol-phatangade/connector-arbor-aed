@@ -2,10 +2,10 @@
   "name": "arbor-aed",
   "version": "1.0.0",
   "label": "Arbor AED",
-  "description": "Arbor AED secures the internet data center edge from threats against availability — specifically from application-layer, distributed denial of service (DDoS) attacks.",
+  "description": "Arbor AED secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
   "publisher": "Fortinet",
-  "icon_small_name": "arbor_small.png",
-  "icon_large_name": "arbor_large.png",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
   "category": "Network Security",
   "cs_approved": true,
   "cs_compatible": true,
@@ -16,6 +16,8 @@
         "title": "Server URL",
         "name": "server_url",
         "type": "text",
+        "description": "Specify the server url of the Arbor AED instance.",
+        "tooltip": "Specify the server url of the Arbor AED instance.",
         "required": true,
         "editable": true,
         "visible": true
@@ -26,7 +28,9 @@
         "type": "password",
         "required": true,
         "editable": true,
-        "visible": true
+        "visible": true,
+        "description": "Specify the API Key generated in Arbor AED instance.",
+        "tooltip": "Specify the API Key generated in Arbor AED instance."
       },
       {
         "title": "Verify SSL",
@@ -35,6 +39,7 @@
         "required": false,
         "editable": true,
         "visible": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
         "value": true
       }
     ]
@@ -49,44 +54,8 @@
       "output_schema": {
         "countries": [
           {
-            "country": "XF",
-            "name": "6to4 Relay Anycast"
-          },
-          {
-            "country": "AF",
-            "name": "Afghanistan"
-          },
-          {
-            "country": "AX",
-            "name": "Aland Islands"
-          },
-          {
-            "country": "AL",
-            "name": "Albania"
-          },
-          {
-            "country": "DZ",
-            "name": "Algeria"
-          },
-          {
-            "country": "AS",
-            "name": "American Samoa"
-          },
-          {
-            "country": "AD",
-            "name": "Andorra"
-          },
-          {
-            "country": "AO",
-            "name": "Angola"
-          },
-          {
-            "country": "AI",
-            "name": "Anguilla"
-          },
-          {
-            "country": "AQ",
-            "name": "Antarctica"
+            "country": "",
+            "name": ""
           }
         ]
       },
@@ -138,7 +107,7 @@
           "required": false
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
@@ -148,7 +117,7 @@
           "required": false
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -230,7 +199,7 @@
           "value": ""
         },
         {
-          "title": "Protection Group Mode",
+          "title": "Active",
           "name": "active",
           "type": "checkbox",
           "description": "Select this checkbox to set the mode of the protection group that you want to create in Arbor AED to 'Active'.",
@@ -269,29 +238,27 @@
       "output_schema": {
         "protection-groups": [
           {
-            "active": 1,
-            "bpsDropped": 5.898173807177228,
-            "bpsPassed": 277881.41902718996,
-            "bytesDropped": 63586,
-            "bytesPassed": 2995735373,
-            "cid": null,
-            "description": "The default protection group on 0.0.0.0/0",
-            "name": "Default Protection Group",
-            "packetsDropped": 25,
-            "packetsPassed": 3507819,
-            "pgid": 17,
-            "ppsDropped": 0.0002898718766305293,
-            "ppsPassed": 40.67272305640907,
-            "prefixes": [
-              "0.0.0.0/0"
-            ],
-            "profiling": false,
-            "profilingDuration": 0,
-            "profilingStart": 0,
-            "protectionLevel": null,
-            "serverName": "Generic Server",
-            "serverType": 0,
-            "timeCreated": 1696399521
+            "active": "",
+            "bpsDropped": "",
+            "bpsPassed": "",
+            "bytesDropped": "",
+            "bytesPassed": "",
+            "cid": "",
+            "description": "",
+            "name": "",
+            "packetsDropped": "",
+            "packetsPassed": "",
+            "pgid": "",
+            "ppsDropped": "",
+            "ppsPassed": "",
+            "prefixes": [],
+            "profiling": "",
+            "profilingDuration": "",
+            "profilingStart": "",
+            "protectionLevel": "",
+            "serverName": "",
+            "serverType": "",
+            "timeCreated": ""
           }
         ]
       },
@@ -340,7 +307,7 @@
           "description": "Time of the creation of the protection group that you want to retrieve from Arbor AED."
         },
         {
-          "title": "Protection Group Mode",
+          "title": "Active",
           "name": "active",
           "type": "select",
           "options": [
@@ -386,7 +353,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -397,7 +364,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -462,15 +429,14 @@
           "value": ""
         },
         {
-          "title": "Protection Group Mode",
+          "title": "Active",
           "name": "active",
           "type": "checkbox",
           "description": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
           "tooltip": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": true
+          "required": false
         },
         {
           "title": "Protection Level",
@@ -486,8 +452,7 @@
           "tooltip": "The protection level (None = use the global protection level, 1 = low, 2 = medium, 3 = high). Default: 1",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": "Low"
+          "required": false
         }
       ],
       "enabled": true
@@ -560,6 +525,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Arbor AED."
         }
@@ -632,6 +598,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Arbor AED."
         },
@@ -693,7 +660,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -704,7 +671,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10",
@@ -776,6 +743,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Arbor AED."
         }
@@ -850,6 +818,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Arbor AED."
         }
@@ -924,6 +893,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Arbor AED."
         },
@@ -985,7 +955,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -996,7 +966,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -1068,6 +1038,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Arbor AED."
         }
@@ -1142,6 +1113,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Arbor AED."
         }
@@ -1216,6 +1188,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Arbor AED."
         },
@@ -1277,7 +1250,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -1288,7 +1261,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -1360,6 +1333,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Arbor AED."
         }
@@ -1434,6 +1408,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Arbor AED."
         }
@@ -1508,6 +1483,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Arbor AED."
         },
@@ -1569,7 +1545,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -1580,7 +1556,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -1652,6 +1628,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Arbor AED."
         }
@@ -1726,6 +1703,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Arbor AED."
         }
@@ -1800,6 +1778,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Arbor AED."
         },
@@ -1861,7 +1840,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -1872,7 +1851,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -1944,6 +1923,7 @@
               }
             ]
           },
+          "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Arbor AED.",
           "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Arbor AED."
         }
@@ -2065,7 +2045,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -2076,7 +2056,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
@@ -2227,7 +2207,7 @@
           "value": ""
         },
         {
-          "title": "Page",
+          "title": "Page Number",
           "name": "page",
           "type": "integer",
           "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
@@ -2238,7 +2218,7 @@
           "value": ""
         },
         {
-          "title": "Per Page",
+          "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
           "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
