@@ -1,0 +1,2258 @@
+{
+  "name": "arbor-aed",
+  "version": "1.0.0",
+  "label": "Arbor AED",
+  "description": "Arbor AED secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
+  "publisher": "Fortinet",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": "Network Security",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "Specify the server url of the Arbor AED instance.",
+        "tooltip": "Specify the server url of the Arbor AED instance.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "type": "password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "description": "Specify the API Key generated in Arbor AED instance.",
+        "tooltip": "Specify the API Key generated in Arbor AED instance."
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Countries",
+      "operation": "get_countries",
+      "description": "Retrieves the Arbor Networks AED country codes and names based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_countries",
+      "output_schema": {
+        "countries": [
+          {
+            "country": "",
+            "name": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name.",
+          "description": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name."
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited countries name.",
+          "placeholder": "Eg. Australia+Belgium",
+          "description": "Specify the list of \u2018+\u2019 delimited country names based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "Eg. country,name or name or country",
+          "tooltip": "List of \u2018,\u2019 delimited key",
+          "description": "Specify the list of \u2018+\u2019 delimited keys that you want to in the results of this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "tooltip": "The direction in which results are sorted (ASC or DESC)",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Create Inbound Protection Groups",
+      "operation": "create_inbound_protection_groups",
+      "description": "Creates an Arbor Networks AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_inbound_protection_groups",
+      "output_schema": {
+        "active": "",
+        "bpsDropped": "",
+        "bpsPassed": "",
+        "bytesDropped": "",
+        "bytesPassed": "",
+        "description": "",
+        "name": "",
+        "packetsDropped": "",
+        "packetsPassed": "",
+        "pgid": "",
+        "ppsDropped": "",
+        "ppsPassed": "",
+        "prefixes": [],
+        "protectionLevel": "",
+        "serverName": "",
+        "serverType": "",
+        "timeCreated": ""
+      },
+      "parameters": [
+        {
+          "title": "Protection Group Name",
+          "name": "name",
+          "type": "text",
+          "description": "Name of the protection group name that you want to create in Arbor AED.",
+          "tooltip": "Name of the protection group name that you want to create in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "IP Addresses or CIDRs",
+          "name": "prefixes",
+          "type": "text",
+          "description": "List of \u2018,\u2019 delimited IP addresses or CIDRs belonging to the protection group that you want to create in Arbor AED. Note: Any IP Addresses or CIDRs that do not match the IP version of the specified protection group server type will be ignored.",
+          "tooltip": "List of \u2018,\u2019 delimited IP Addresses or CIDRs belonging to the protection group. Any IP Addresses or CIDRs that do not match the IP version of the server type will be ignored.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Protection Group Server Type",
+          "name": "serverType",
+          "type": "integer",
+          "description": "Server type of the Arbor AED group in which you want to create the protection group.",
+          "tooltip": "Server type of the Arbor AED group in which you want to create the protection group.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Description of the protection group name that you want to create in Arbor AED.",
+          "tooltip": "Description of the protection group name that you want to create in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Active",
+          "name": "active",
+          "type": "checkbox",
+          "description": "Select this checkbox to set the mode of the protection group that you want to create in Arbor AED to 'Active'.",
+          "tooltip": "Select this checkbox to set the mode of the protection group that you want to create in Arbor AED to 'Active'.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": true
+        },
+        {
+          "title": "Protection Level",
+          "name": "protectionLevel",
+          "type": "select",
+          "options": [
+            "None",
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "description": "Protection level that you want to set for the protection group that you want to create in Arbor AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High",
+          "tooltip": "Protection level that you want to set for the protection group that you want to create in Arbor AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": "Low"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Inbound Protection Groups",
+      "operation": "get_inbound_protection_groups",
+      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Arbor Networks AED protection groups based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_inbound_protection_groups",
+      "output_schema": {
+        "protection-groups": [
+          {
+            "active": "",
+            "bpsDropped": "",
+            "bpsPassed": "",
+            "bytesDropped": "",
+            "bytesPassed": "",
+            "cid": "",
+            "description": "",
+            "name": "",
+            "packetsDropped": "",
+            "packetsPassed": "",
+            "pgid": "",
+            "ppsDropped": "",
+            "ppsPassed": "",
+            "prefixes": [],
+            "profiling": "",
+            "profilingDuration": "",
+            "profilingStart": "",
+            "protectionLevel": "",
+            "serverName": "",
+            "serverType": "",
+            "timeCreated": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Protection Group Identifier",
+          "name": "pgid",
+          "type": "integer",
+          "description": "Identifier of the protection group that you want to retrieve from Arbor AED.",
+          "tooltip": "Identifier of the protection group that you want to retrieve from Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Protection Group Name",
+          "name": "name",
+          "type": "text",
+          "description": "Name of the protection group that you want to retrieve from Arbor AED.",
+          "tooltip": "Name of the protection group that you want to retrieve from Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Description of the protection group that you want to retrieve from Arbor AED.",
+          "tooltip": "Description of the protection group that you want to retrieve from Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Created Time",
+          "name": "timeCreated",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "tooltip": "Time of the creation of the protection group that you want to retrieve from Arbor AED.",
+          "description": "Time of the creation of the protection group that you want to retrieve from Arbor AED."
+        },
+        {
+          "title": "Active",
+          "name": "active",
+          "type": "select",
+          "options": [
+            "Active",
+            "Inactive"
+          ],
+          "description": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "tooltip": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Protection Level",
+          "name": "protectionLevel",
+          "type": "select",
+          "options": [
+            "None",
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "description": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Arbor AED.",
+          "tooltip": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can specify fields such as 'Search Criteria', which is used to determine dynamic membership or the 'Links' field defined JSON requests.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Update Inbound Protection Groups",
+      "operation": "update_inbound_protection_groups",
+      "description": "Modifies the mode or the protection level for specific inbound protection groups based on the protection group IDs you have specified.",
+      "category": "investigation",
+      "annotation": "update_inbound_protection_groups",
+      "output_schema": {
+        "protection-groups": [
+          {
+            "active": "",
+            "bpsDropped": "",
+            "bpsPassed": "",
+            "bytesDropped": "",
+            "bytesPassed": "",
+            "description": "",
+            "name": "",
+            "packetsDropped": "",
+            "packetsPassed": "",
+            "pgid": "",
+            "ppsDropped": "",
+            "ppsPassed": "",
+            "prefixes": [],
+            "protectionLevel": "",
+            "serverName": "",
+            "serverType": "",
+            "timeCreated": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Protection Group IDs",
+          "name": "pgid",
+          "type": "text",
+          "tooltip": "List of protection group IDs that you want to update in Arbor AED.",
+          "description": "List of protection group IDs that you want to update in Arbor AED.",
+          "placeholder": "Eg. [7,15] or 7",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Active",
+          "name": "active",
+          "type": "checkbox",
+          "description": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "tooltip": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Protection Level",
+          "name": "protectionLevel",
+          "type": "select",
+          "options": [
+            "None",
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "description": "Protection level that you want to set for the protection group that you want to update in Arbor AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High ",
+          "tooltip": "The protection level (None = use the global protection level, 1 = low, 2 = medium, 3 = high). Default: 1",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Inbound Blacklist Countries",
+      "operation": "add_inbound_blacklist_countries",
+      "description": "Adds one or more countries to the Arbor AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "add_inbound_blacklist_countries",
+      "output_schema": {
+        "countries": [
+          {
+            "cid": [],
+            "country": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Country Code",
+          "name": "country",
+          "type": "text",
+          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Arbor AED.",
+          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Arbor AED.",
+          "placeholder": "Eg. AZ,MF or [\"AO\",\"AI\"] or AZ",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Inbound Blacklisted Countries",
+      "operation": "get_inbound_blacklisted_countries",
+      "description": "Retrieves all the inbound blacklisted countries or specific inbound blacklisted countries based on the input parameters you have specified. By default, 10 blacklisted countries are returned. To return blacklisted countries for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects countries that are globally blacklisted.",
+      "category": "investigation",
+      "annotation": "get_inbound_blacklisted_countries",
+      "output_schema": {
+        "blacklisted-countries": [
+          {
+            "cid": [],
+            "country": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Country Code",
+          "name": "country",
+          "type": "text",
+          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "placeholder": "Eg. AZ,MF or AZ",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "tooltip": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "tooltip": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Arbor AED."
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "description": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Arbor AED",
+          "tooltip": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Arbor AED"
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the countries retrieved by this operation.",
+          "description": "Key used to sort the countries retrieved by this operation."
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. MF+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "Eg. country,updateTime,cid or name or country etc.",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Inbound Blacklisted Countries",
+      "operation": "remove_inbound_blacklisted_countries",
+      "description": "Removes one or more countries from the Arbor AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+      "category": "investigation",
+      "annotation": "remove_inbound_blacklisted_countries",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Country",
+          "name": "country",
+          "type": "text",
+          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Arbor AED.",
+          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Arbor AED.",
+          "placeholder": "Eg. AZ,MF or AZ",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Inbound Blacklist Domains",
+      "operation": "add_inbound_blacklist_domains",
+      "description": "Adds one or more domains to the Arbor AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "add_inbound_blacklist_domains",
+      "output_schema": {
+        "domains": [
+          {
+            "cid": [],
+            "domain": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "description": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Arbor AED.",
+          "tooltip": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Arbor AED.",
+          "placeholder": "Eg. wolframalpha.com,bing.com or [\"wolframalpha.com\",\"bing.com\"] or yahoo.com",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Inbound Blacklisted Domains",
+      "operation": "get_inbound_blacklisted_domains",
+      "description": "Retrieves all the inbound blacklisted domains or specific inbound blacklisted domains based on the input parameters you have specified. To return blacklisted domains for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+      "category": "investigation",
+      "annotation": "get_inbound_blacklisted_domains",
+      "output_schema": {
+        "blacklisted-domains": [
+          {
+            "cid": [],
+            "domain": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "description": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "placeholder": "E.g [\"wolframalpha.com\",\"bing.com\"] or [\"bing.com\"] or bing.com",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Arbor AED."
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "description": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Arbor AED."
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the domains retrieved by this operation.",
+          "description": "Key used to sort the domains retrieved by this operation."
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. wolframalpha.com+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "Eg. domain,updateTime,cid or domain.",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Inbound Blacklisted Domains",
+      "operation": "remove_inbound_blacklisted_domains",
+      "description": "Removes one or more domains from the Arbor AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+      "category": "investigation",
+      "annotation": "remove_inbound_blacklisted_domains",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "tooltip": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Arbor AED.",
+          "description": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Arbor AED.",
+          "placeholder": "Eg. microsoft.com,ubuntu.co.uk or [\"microsoft.com\",\"ubuntu.co.uk\"] or microsoft.com",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Inbound Blacklist Hosts",
+      "operation": "add_inbound_blacklist_hosts",
+      "description": "Adds one or more hosts to the Arbor AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "add_inbound_blacklist_hosts",
+      "output_schema": {
+        "hosts": [
+          {
+            "cid": [],
+            "hostAddress": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"] or 8.8.8.8",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Inbound Blacklisted Hosts",
+      "operation": "get_inbound_blacklisted_hosts",
+      "description": "Retrieves all the inbound blacklisted hosts or specific inbound blacklisted hosts based on the input parameters you have specified. To return blacklisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+      "category": "investigation",
+      "annotation": "get_inbound_blacklisted_hosts",
+      "output_schema": {
+        "blacklisted-hosts": [
+          {
+            "cid": [],
+            "hostAddress": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"10.10.10.10\",\"8.8.8.8\"]",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Arbor AED."
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED."
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the hosts retrieved by this operation.",
+          "description": "Key used to sort the hosts retrieved by this operation."
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. 8.8.8.8+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "Eg. hostAddress,updateTime,cid or hostAddress.",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Inbound Blacklisted Hosts",
+      "operation": "remove_inbound_blacklisted_hosts",
+      "description": "Removes one or more hosts or CIDRs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "remove_inbound_blacklisted_hosts",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. 10.10.10.10,8.8.8.8 or 8.8.8.8",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Inbound Whitelisted Hosts",
+      "operation": "add_inbound_whitelisted_hosts",
+      "description": "Adds one or more hosts to the Arbor AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
+      "category": "investigation",
+      "annotation": "add_inbound_whitelisted_hosts",
+      "output_schema": {
+        "hosts": [
+          {
+            "cid": [],
+            "hostAddress": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"] or 8.8.8.8",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Inbound Whitelisted Hosts",
+      "operation": "get_inbound_whitelisted_hosts",
+      "description": "Retrieves all the inbound whitelisted hosts or specific inbound whitelisted hosts based on the input parameters you have specified. By default, all whitelisted hosts are returned. To return whitelisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects hosts that are globally whitelisted.",
+      "category": "investigation",
+      "annotation": "get_inbound_whitelisted_hosts",
+      "output_schema": {
+        "whitelisted-hosts": [
+          {
+            "cid": [],
+            "hostAddress": "",
+            "pgid": [],
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound whitelist in Arbor AED.",
+          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound whitelist in Arbor AED.",
+          "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"]",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Arbor AED."
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED."
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the domains retrieved by this operation.",
+          "description": "Key used to sort the domains retrieved by this operation."
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. 8.8.8.8+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "Eg. hostAddress,updateTime,cid or hostAddress.",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Inbound Whitelisted Hosts",
+      "operation": "remove_inbound_whitelisted_hosts",
+      "description": "Removes one or more hosts or CIDRs from the Arbor AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "remove_inbound_whitelisted_hosts",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. 10.10.10.10,8.8.8.8 or 8.8.8.8",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Inbound Blacklist URLs",
+      "operation": "add_inbound_blacklist_urls",
+      "description": "Adds one or more URLs to the Arbor AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "add_inbound_blacklist_urls",
+      "output_schema": {
+        "urls": [
+          {
+            "cid": [],
+            "pgid": [],
+            "updateTime": "",
+            "url": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "URL",
+          "name": "url",
+          "type": "text",
+          "tooltip": "URL or a comma-separated list of URLs that you want to add to the blacklist in Arbor AED.",
+          "description": "URL or a comma-separated list of URLs that you want to add to the blacklist in Arbor AED.",
+          "placeholder": "yahoo.com/mail,google.com/calendar or [\"yahoo.com/mail\",\"google.com/calendar\"] or maps.google.com/maps",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Inbound Blacklisted URLs",
+      "operation": "get_inbound_blacklisted_urls",
+      "description": "Retrieves all the inbound blacklisted URLs or specific inbound blacklisted URLs based on the input parameters you have specified. To return blacklisted URLs for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects URLs that are globally blacklisted.",
+      "category": "investigation",
+      "annotation": "get_inbound_blacklisted_urls",
+      "output_schema": {
+        "blacklisted-urls": [
+          {
+            "cid": [],
+            "pgid": [],
+            "updateTime": "",
+            "url": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "URL",
+          "name": "url",
+          "type": "text",
+          "description": "List of \u2018,\u2019 delimited URLs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "List of \u2018,\u2019 delimited URLs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "placeholder": "[\"yahoo.com/mail\",\"google.com/calendar\"] or {\"maps.google.com/maps\"]",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Arbor AED."
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "description": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "tooltip": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Arbor AED."
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the domains retrieved by this operation.",
+          "description": "Key used to sort the domains retrieved by this operation."
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. maps.google.com/maps+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "Eg. url,updateTime,cid or url.",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Inbound Blacklisted URLs",
+      "operation": "remove_inbound_blacklisted_urls",
+      "description": "Removes one or more URLs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "category": "investigation",
+      "annotation": "remove_inbound_blacklisted_urls",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "URL",
+          "name": "url",
+          "type": "text",
+          "description": "URL or a comma-separated list of URLs that you want to remove from the blacklist in Arbor AED.",
+          "tooltip": "URL or a comma-separated list of URLs that you want to remove from the blacklist in Arbor AED.",
+          "placeholder": "yahoo.com/mail,google.com/calendar or [\"yahoo.com/mail\",\"google.com/calendar\"] or maps.google.com/maps",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Arbor AED.",
+          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Arbor AED."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Outbound Blacklist Hosts",
+      "operation": "add_outbound_blacklist_hosts",
+      "description": "Adds one or more hosts to the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified.",
+      "category": "investigation",
+      "annotation": "add_outbound_blacklist_hosts",
+      "output_schema": {
+        "hosts": [
+          {
+            "hostAddress": "",
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1,2.2.2.2 or 1.1.1.1",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Outbound Blacklisted Hosts",
+      "operation": "get_outbound_blacklisted_hosts",
+      "description": "Retrieves all the outbound blacklisted hosts or specific outbound blacklisted hosts based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_outbound_blacklisted_hosts",
+      "output_schema": {
+        "blacklisted-hosts": [
+          {
+            "hostAddress": "",
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound blacklist in Arbor AED.",
+          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound blacklist in Arbor AED.",
+          "placeholder": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "type": "datetime",
+          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Arbor AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": 0
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. 8.8.8.8+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address.",
+          "description": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Outbound Blacklisted Hosts",
+      "operation": "remove_outbound_blacklisted_hosts",
+      "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
+      "category": "investigation",
+      "annotation": "remove_outbound_blacklisted_hosts",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. 1.1.1.1,2.2.2.2 or [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Outbound Whitelist Hosts",
+      "operation": "add_outbound_whitelisted_hosts",
+      "description": "Adds one or more hosts to the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified.",
+      "category": "investigation",
+      "annotation": "add_outbound_whitelisted_hosts",
+      "output_schema": {
+        "hosts": [
+          {
+            "hostAddress": "",
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1,2.2.2.2 or 1.1.1.1",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Outbound Whitelisted Hosts",
+      "operation": "get_outbound_whitelisted_hosts",
+      "description": "Retrieves all the outbound whitelisted hosts or specific outbound whitelisted hosts based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_outbound_whitelisted_hosts",
+      "output_schema": {
+        "whitelisted-hosts": [
+          {
+            "hostAddress": "",
+            "updateTime": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Arbor AED.",
+          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Arbor AED.",
+          "placeholder": "E.g. [\"1.1.1.1\",\"2.2.2.2\"]",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "type": "datetime",
+          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Arbor AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": 0
+        },
+        {
+          "title": "Queue",
+          "name": "q",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "placeholder": "Eg. 8.8.8.8+1610553061",
+          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+        },
+        {
+          "title": "Response Fields",
+          "name": "select",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
+          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+        },
+        {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address.",
+          "description": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address."
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Page Number",
+          "name": "page",
+          "type": "integer",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        },
+        {
+          "title": "Records Per Page",
+          "name": "perPage",
+          "type": "integer",
+          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Remove Outbound Whitelisted Hosts",
+      "operation": "remove_outbound_whitelisted_hosts",
+      "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
+      "category": "investigation",
+      "annotation": "remove_outbound_whitelisted_hosts",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Host Address",
+          "name": "hostAddress",
+          "type": "text",
+          "placeholder": "Eg. 1.1.1.1,2.2.2.2 or 1.1.1.1",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Arbor AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Arbor AED.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "value": ""
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
