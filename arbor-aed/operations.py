@@ -48,7 +48,7 @@ class ArborAps(object):
                 return response.json()
             else:
                 logger.error(response.text)
-                raise ConnectorError({'status_code': response.status_code, 'message': response.reason})
+                raise ConnectorError({'status_code': response.status_code, 'message': response.text})
         except requests.exceptions.SSLError:
             raise ConnectorError('SSL certificate validation failed')
         except requests.exceptions.ConnectTimeout:
@@ -64,8 +64,11 @@ class ArborAps(object):
 
 def get_epoch(_date):
     try:
-        pattern = '%Y-%m-%dT%H:%M:%S.%fZ'
-        return int(time.mktime(time.strptime(_date, pattern)))
+        if 'T' not in str(_date):
+            return int(_date)
+        else:
+            pattern = '%Y-%m-%dT%H:%M:%S.%fZ'
+            return int(time.mktime(time.strptime(_date, pattern)))
     except Exception as err:
         logger.exception(str(err))
         raise ConnectorError(str(err))
@@ -186,7 +189,7 @@ def remove_inbound_blacklisted_hosts(config, params):
 def add_inbound_whitelisted_hosts(config, params):
     aps = ArborAps(config)
     data = get_params(params)
-    response = aps.make_request(endpoint='protection-groups/denied-hosts/', method='POST', params=data)
+    response = aps.make_request(endpoint='protection-groups/allowed-hosts/', method='POST', params=data)
     if response.get('hosts'):
         return response
     else:

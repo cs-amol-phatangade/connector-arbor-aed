@@ -61,16 +61,6 @@
       },
       "parameters": [
         {
-          "title": "Sort",
-          "name": "sort_param",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name.",
-          "description": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name."
-        },
-        {
           "title": "Queue",
           "name": "q",
           "visible": true,
@@ -93,6 +83,16 @@
           "description": "Specify the list of \u2018+\u2019 delimited keys that you want to in the results of this operation."
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name.",
+          "description": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -100,8 +100,8 @@
             "Ascending",
             "Descending"
           ],
-          "tooltip": "The direction in which results are sorted (ASC or DESC)",
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "The direction in which results are sorted (ASC or DESC). Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false
@@ -338,6 +338,16 @@
           "value": ""
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the protection groups retrieved by this operation.",
+          "description": "Key used to sort the protection groups retrieved by this operation."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -345,8 +355,8 @@
             "Ascending",
             "Descending"
           ],
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -422,7 +432,7 @@
           "type": "text",
           "tooltip": "List of protection group IDs that you want to update in Arbor AED.",
           "description": "List of protection group IDs that you want to update in Arbor AED.",
-          "placeholder": "Eg. [7,15] or 7",
+          "placeholder": "Eg. 7",
           "visible": true,
           "editable": true,
           "required": true,
@@ -432,8 +442,8 @@
           "title": "Active",
           "name": "active",
           "type": "checkbox",
-          "description": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
-          "tooltip": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "description": "Mode, Active or Inactive, of the protection group that you want to update in Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "tooltip": "Mode, Active or Inactive, of the protection group that you want to update in Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
           "visible": true,
           "editable": true,
           "required": false
@@ -480,7 +490,7 @@
           "type": "text",
           "description": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Arbor AED.",
           "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Arbor AED.",
-          "placeholder": "Eg. AZ,MF or [\"AO\",\"AI\"] or AZ",
+          "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
           "required": true,
@@ -613,16 +623,6 @@
           "tooltip": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Arbor AED"
         },
         {
-          "title": "Sort",
-          "name": "sort_param",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Key used to sort the countries retrieved by this operation.",
-          "description": "Key used to sort the countries retrieved by this operation."
-        },
-        {
           "title": "Queue",
           "name": "q",
           "visible": true,
@@ -645,6 +645,16 @@
           "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the countries retrieved by this operation.",
+          "description": "Key used to sort the countries retrieved by this operation."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -652,8 +662,8 @@
             "Ascending",
             "Descending"
           ],
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code.",
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -908,16 +918,6 @@
           "tooltip": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Arbor AED."
         },
         {
-          "title": "Sort",
-          "name": "sort_param",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Key used to sort the domains retrieved by this operation.",
-          "description": "Key used to sort the domains retrieved by this operation."
-        },
-        {
           "title": "Queue",
           "name": "q",
           "visible": true,
@@ -940,6 +940,16 @@
           "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the domains retrieved by this operation.",
+          "description": "Key used to sort the domains retrieved by this operation."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -947,8 +957,8 @@
             "Ascending",
             "Descending"
           ],
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -1203,16 +1213,6 @@
           "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED."
         },
         {
-          "title": "Sort",
-          "name": "sort_param",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Key used to sort the hosts retrieved by this operation.",
-          "description": "Key used to sort the hosts retrieved by this operation."
-        },
-        {
           "title": "Queue",
           "name": "q",
           "visible": true,
@@ -1235,6 +1235,16 @@
           "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the hosts retrieved by this operation.",
+          "description": "Key used to sort the hosts retrieved by this operation."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -1242,8 +1252,8 @@
             "Ascending",
             "Descending"
           ],
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -1498,16 +1508,6 @@
           "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED."
         },
         {
-          "title": "Sort",
-          "name": "sort_param",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Key used to sort the domains retrieved by this operation.",
-          "description": "Key used to sort the domains retrieved by this operation."
-        },
-        {
           "title": "Queue",
           "name": "q",
           "visible": true,
@@ -1530,6 +1530,16 @@
           "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the domains retrieved by this operation.",
+          "description": "Key used to sort the domains retrieved by this operation."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -1537,8 +1547,8 @@
             "Ascending",
             "Descending"
           ],
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -1793,16 +1803,6 @@
           "tooltip": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Arbor AED."
         },
         {
-          "title": "Sort",
-          "name": "sort_param",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Key used to sort the domains retrieved by this operation.",
-          "description": "Key used to sort the domains retrieved by this operation."
-        },
-        {
           "title": "Queue",
           "name": "q",
           "visible": true,
@@ -1825,6 +1825,16 @@
           "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
         },
         {
+          "title": "Sort",
+          "name": "sort_param",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Key used to sort the URLs retrieved by this operation.",
+          "description": "Key used to sort the URLs retrieved by this operation."
+        },
+        {
           "title": "Direction",
           "name": "direction",
           "type": "select",
@@ -1832,8 +1842,8 @@
             "Ascending",
             "Descending"
           ],
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -2026,8 +2036,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address.",
-          "description": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address."
+          "tooltip": "Sort the hosts retrieved by this operation by a key i.e., either hostAddress or updateTime. By default, this page is sorted by hostAddress string Ascending.",
+          "description": "Sort the hosts retrieved by this operation by a key i.e., either hostAddress or updateTime. By default, this page is sorted by hostAddress string Ascending."
         },
         {
           "title": "Direction",
@@ -2037,8 +2047,8 @@
             "Ascending",
             "Descending"
           ],
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -2188,8 +2198,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address.",
-          "description": "Sort the hosts retrieved by this operation by a key i.e., either Host Address or Update Time. By default, this is set to Host Address."
+          "tooltip": "Sort the hosts retrieved by this operation by a key i.e., either hostAddress or updateTime. By default, this page is sorted by hostAddress string Ascending.",
+          "description": "Sort the hosts retrieved by this operation by a key i.e., either hostAddress or updateTime. By default, this page is sorted by hostAddress string Ascending."
         },
         {
           "title": "Direction",
@@ -2199,8 +2209,8 @@
             "Ascending",
             "Descending"
           ],
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
-          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending.",
+          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false,
