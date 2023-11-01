@@ -4,12 +4,12 @@
     {
       "uuid": "eaf12624-2666-4702-b9ce-583f865c1103",
       "@type": "WorkflowCollection",
-      "name": "Sample - Arbor AED - 1.0.0",
-      "description": "Arbor AED secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
+      "name": "Sample - Netscout AED - 1.0.0",
+      "description": "Netscout AED secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
       "visible": true,
       "image": null,
       "recordTags": [
-        "Arbor",
+        "Netscout",
         "arbor-aed"
       ],
       "workflows": [
@@ -18,11 +18,11 @@
           "uuid": "ee4358f9-f6b9-4587-9cf4-bbb4a0dc4d0a",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Retrieves the Arbor Networks AED country codes and names based on the input parameters you have specified.",
+          "description": "Retrieves the Netscout AED country codes and names based on the input parameters you have specified.",
           "name": "Get Countries",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -40,7 +40,7 @@
               "status": null,
               "arguments": {
                 "route": "adb5c51e-cdf8-4b95-8622-f92b2d18d275",
-                "title": "Arbor AED: Get Countries",
+                "title": "Netscout AED: Get Countries",
                 "resources": [
                   "alerts"
                 ],
@@ -65,8 +65,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -98,11 +98,11 @@
           "uuid": "f2086a1b-6182-4be2-999b-5651a69a8dfa",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Creates an Arbor Networks AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
+          "description": "Creates an Netscout AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
           "name": "Create Inbound Protection Groups",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -120,7 +120,7 @@
               "status": null,
               "arguments": {
                 "route": "06c9c5fe-83cd-46ea-b52d-97b69273ff50",
-                "title": "Arbor AED: Create Inbound Protection Groups",
+                "title": "Netscout AED: Create Inbound Protection Groups",
                 "resources": [
                   "alerts"
                 ],
@@ -145,8 +145,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "name": "",
                   "prefixes": "",
@@ -187,9 +187,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Arbor Networks AED protection groups based on the input parameters you have specified.",
           "name": "Get Inbound Protection Groups",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -207,7 +207,7 @@
               "status": null,
               "arguments": {
                 "route": "394c522e-e15e-41a1-a75e-9f69c2ac7a01",
-                "title": "Arbor AED: Get Inbound Protection Groups",
+                "title": "Netscout AED: Get Inbound Protection Groups",
                 "resources": [
                   "alerts"
                 ],
@@ -232,8 +232,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "pgid": "",
                   "name": "",
@@ -275,9 +275,9 @@
           "triggerLimit": null,
           "description": "Modifies the mode or the protection level for specific inbound protection groups based on the protection group IDs you have specified.",
           "name": "Update Inbound Protection Groups",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -295,7 +295,7 @@
               "status": null,
               "arguments": {
                 "route": "88559dc2-51d8-48a5-beb5-c140b425aaee",
-                "title": "Arbor AED: Update Inbound Protection Groups",
+                "title": "Netscout AED: Update Inbound Protection Groups",
                 "resources": [
                   "alerts"
                 ],
@@ -320,8 +320,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "pgid": "",
                   "active": true,
@@ -357,11 +357,11 @@
           "uuid": "ccd8072a-d7fd-40ee-9e06-b75062df04de",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more countries to the Arbor AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more countries to the Netscout AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Add Inbound Blacklist Countries",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -379,7 +379,7 @@
               "status": null,
               "arguments": {
                 "route": "f471b9d5-64ea-4da4-9f8d-bf00bfadeaa0",
-                "title": "Arbor AED: Add Inbound Blacklist Countries",
+                "title": "Netscout AED: Add Inbound Blacklist Countries",
                 "resources": [
                   "alerts"
                 ],
@@ -404,8 +404,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "country": ""
                 },
@@ -441,9 +441,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the inbound blacklisted countries or specific inbound blacklisted countries based on the input parameters you have specified. By default, 10 blacklisted countries are returned. To return blacklisted countries for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects countries that are globally blacklisted.",
           "name": "Get Inbound Blacklisted Countries",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -461,7 +461,7 @@
               "status": null,
               "arguments": {
                 "route": "2dd07dc5-c97b-43fc-906f-40fab88ec5ee",
-                "title": "Arbor AED: Get Inbound Blacklisted Countries",
+                "title": "Netscout AED: Get Inbound Blacklisted Countries",
                 "resources": [
                   "alerts"
                 ],
@@ -486,8 +486,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "country": "",
                   "direction": "",
@@ -524,11 +524,11 @@
           "uuid": "8ee61c05-8ed5-4faa-8f20-6e97f3dca37f",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more countries from the Arbor AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+          "description": "Removes one or more countries from the Netscout AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
           "name": "Remove Inbound Blacklisted Countries",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -546,7 +546,7 @@
               "status": null,
               "arguments": {
                 "route": "53ddd5ba-650f-4f13-960e-7df45ca9b65b",
-                "title": "Arbor AED: Remove Inbound Blacklisted Countries",
+                "title": "Netscout AED: Remove Inbound Blacklisted Countries",
                 "resources": [
                   "alerts"
                 ],
@@ -571,8 +571,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "country": ""
                 },
@@ -606,11 +606,11 @@
           "uuid": "603057fe-4805-48a7-b738-df6533887d98",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more domains to the Arbor AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more domains to the Netscout AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Add Inbound Blacklist Domains",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -628,7 +628,7 @@
               "status": null,
               "arguments": {
                 "route": "befd156e-3e6b-4508-a049-ffc7576f22f3",
-                "title": "Arbor AED: Add Inbound Blacklist Domains",
+                "title": "Netscout AED: Add Inbound Blacklist Domains",
                 "resources": [
                   "alerts"
                 ],
@@ -653,8 +653,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "domain": ""
                 },
@@ -690,9 +690,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the inbound blacklisted domains or specific inbound blacklisted domains based on the input parameters you have specified. To return blacklisted domains for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
           "name": "Get Inbound Blacklisted Domains",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -710,7 +710,7 @@
               "status": null,
               "arguments": {
                 "route": "3ea4d1f9-293b-484d-a6bc-cc061652e04d",
-                "title": "Arbor AED: Get Inbound Blacklisted Domains",
+                "title": "Netscout AED: Get Inbound Blacklisted Domains",
                 "resources": [
                   "alerts"
                 ],
@@ -735,8 +735,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "domain": "",
                   "direction": "",
@@ -773,11 +773,11 @@
           "uuid": "52b21306-17e7-4937-9869-563e0cde1c02",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more domains from the Arbor AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+          "description": "Removes one or more domains from the Netscout AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
           "name": "Remove Inbound Blacklisted Domains",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -795,7 +795,7 @@
               "status": null,
               "arguments": {
                 "route": "74999f9b-25b7-4373-9338-c3d202f79d44",
-                "title": "Arbor AED: Remove Inbound Blacklisted Domains",
+                "title": "Netscout AED: Remove Inbound Blacklisted Domains",
                 "resources": [
                   "alerts"
                 ],
@@ -820,8 +820,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "domain": ""
                 },
@@ -855,11 +855,11 @@
           "uuid": "f927b5db-b57b-46a2-ba78-2ba6d601cf78",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Arbor AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more hosts to the Netscout AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Add Inbound Blacklist Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -877,7 +877,7 @@
               "status": null,
               "arguments": {
                 "route": "4a4fef31-f51a-40d8-a5a8-0ba9b292a272",
-                "title": "Arbor AED: Add Inbound Blacklist Hosts",
+                "title": "Netscout AED: Add Inbound Blacklist Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -902,8 +902,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -939,9 +939,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the inbound blacklisted hosts or specific inbound blacklisted hosts based on the input parameters you have specified. To return blacklisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
           "name": "Get Inbound Blacklisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -959,7 +959,7 @@
               "status": null,
               "arguments": {
                 "route": "dcd1b649-4e61-417e-9004-25f99c787b05",
-                "title": "Arbor AED: Get Inbound Blacklisted Hosts",
+                "title": "Netscout AED: Get Inbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -984,8 +984,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": "",
                   "direction": "",
@@ -1022,11 +1022,11 @@
           "uuid": "833c2bb7-577c-4989-85a8-78f9745bfc6f",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Remove Inbound Blacklisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1044,7 +1044,7 @@
               "status": null,
               "arguments": {
                 "route": "2faa85ac-6905-4b27-a610-a12e2fcc47b8",
-                "title": "Arbor AED: Remove Inbound Blacklisted Hosts",
+                "title": "Netscout AED: Remove Inbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1069,8 +1069,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -1104,11 +1104,11 @@
           "uuid": "a9fcee07-7d6e-45d4-a44e-5deb629fd195",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Arbor AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
+          "description": "Adds one or more hosts to the Netscout AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
           "name": "Add Inbound Whitelisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1126,7 +1126,7 @@
               "status": null,
               "arguments": {
                 "route": "ec792e1f-3186-4114-982b-676b30a61004",
-                "title": "Arbor AED: Add Inbound Whitelisted Hosts",
+                "title": "Netscout AED: Add Inbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1151,8 +1151,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -1188,9 +1188,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the inbound whitelisted hosts or specific inbound whitelisted hosts based on the input parameters you have specified. By default, all whitelisted hosts are returned. To return whitelisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects hosts that are globally whitelisted.",
           "name": "Get Inbound Whitelisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1208,7 +1208,7 @@
               "status": null,
               "arguments": {
                 "route": "c51144cf-22f7-433a-a325-9e9796c8ec91",
-                "title": "Arbor AED: Get Inbound Whitelisted Hosts",
+                "title": "Netscout AED: Get Inbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1233,8 +1233,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": "",
                   "direction": "",
@@ -1271,11 +1271,11 @@
           "uuid": "43edbba6-bb88-48ec-a226-f403b9c0ee4f",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Arbor AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Remove Inbound Whitelisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1293,7 +1293,7 @@
               "status": null,
               "arguments": {
                 "route": "92facb9e-af3d-4898-8072-81d7552b3c7f",
-                "title": "Arbor AED: Remove Inbound Whitelisted Hosts",
+                "title": "Netscout AED: Remove Inbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1318,8 +1318,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -1353,11 +1353,11 @@
           "uuid": "89a61f46-cf46-44fa-a62d-c179f9ea426c",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more URLs to the Arbor AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more URLs to the Netscout AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Add Inbound Blacklist URLs",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1375,7 +1375,7 @@
               "status": null,
               "arguments": {
                 "route": "2d4c98cb-b404-4623-be8c-184d4e28b45c",
-                "title": "Arbor AED: Add Inbound Blacklist URLs",
+                "title": "Netscout AED: Add Inbound Blacklist URLs",
                 "resources": [
                   "alerts"
                 ],
@@ -1400,8 +1400,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "url": ""
                 },
@@ -1437,9 +1437,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the inbound blacklisted URLs or specific inbound blacklisted URLs based on the input parameters you have specified. To return blacklisted URLs for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects URLs that are globally blacklisted.",
           "name": "Get Inbound Blacklisted URLs",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1457,7 +1457,7 @@
               "status": null,
               "arguments": {
                 "route": "14b51f26-a6e1-45bc-aa0f-34a867ebb479",
-                "title": "Arbor AED: Get Inbound Blacklisted URLs",
+                "title": "Netscout AED: Get Inbound Blacklisted URLs",
                 "resources": [
                   "alerts"
                 ],
@@ -1482,8 +1482,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "url": "",
                   "direction": "",
@@ -1520,11 +1520,11 @@
           "uuid": "76317a26-a561-4187-90f2-3cf557a09be4",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more URLs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Removes one or more URLs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
           "name": "Remove Inbound Blacklisted URLs",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1542,7 +1542,7 @@
               "status": null,
               "arguments": {
                 "route": "372d9297-de36-4596-927a-1bbecbfc19df",
-                "title": "Arbor AED: Remove Inbound Blacklisted URLs",
+                "title": "Netscout AED: Remove Inbound Blacklisted URLs",
                 "resources": [
                   "alerts"
                 ],
@@ -1567,8 +1567,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "url": ""
                 },
@@ -1602,11 +1602,11 @@
           "uuid": "4a145089-0b4a-4eec-a217-39cb1d1bddec",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified.",
+          "description": "Adds one or more hosts to the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified.",
           "name": "Add Outbound Blacklist Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1624,7 +1624,7 @@
               "status": null,
               "arguments": {
                 "route": "04ab9bff-2dc2-463a-b5e8-5b84ce135698",
-                "title": "Arbor AED: Add Outbound Blacklist Hosts",
+                "title": "Netscout AED: Add Outbound Blacklist Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1649,8 +1649,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -1686,9 +1686,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the outbound blacklisted hosts or specific outbound blacklisted hosts based on the input parameters you have specified.",
           "name": "Get Outbound Blacklisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1706,7 +1706,7 @@
               "status": null,
               "arguments": {
                 "route": "3d8cf07d-da55-4cf0-963d-be599093ba3c",
-                "title": "Arbor AED: Get Outbound Blacklisted Hosts",
+                "title": "Netscout AED: Get Outbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1731,8 +1731,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": "",
                   "updateTime": 0,
@@ -1770,11 +1770,11 @@
           "uuid": "199875bd-f07b-4d2c-a992-fd096c21fd6a",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
           "name": "Remove Outbound Blacklisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1792,7 +1792,7 @@
               "status": null,
               "arguments": {
                 "route": "5816d584-5dd9-46f5-98f0-46d4b9090c21",
-                "title": "Arbor AED: Remove Outbound Blacklisted Hosts",
+                "title": "Netscout AED: Remove Outbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1817,8 +1817,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -1852,11 +1852,11 @@
           "uuid": "7c4fcc40-33bb-49fc-8024-4bdb398b991a",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified.",
+          "description": "Adds one or more hosts to the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified.",
           "name": "Add Outbound Whitelist Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1874,7 +1874,7 @@
               "status": null,
               "arguments": {
                 "route": "614ec296-5eb3-4d93-92c6-5db351b9cc3c",
-                "title": "Arbor AED: Add Outbound Whitelist Hosts",
+                "title": "Netscout AED: Add Outbound Whitelist Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1899,8 +1899,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },
@@ -1936,9 +1936,9 @@
           "triggerLimit": null,
           "description": "Retrieves all the outbound whitelisted hosts or specific outbound whitelisted hosts based on the input parameters you have specified.",
           "name": "Get Outbound Whitelisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -1956,7 +1956,7 @@
               "status": null,
               "arguments": {
                 "route": "9b420e2c-1218-4ca0-be53-505cd248ad18",
-                "title": "Arbor AED: Get Outbound Whitelisted Hosts",
+                "title": "Netscout AED: Get Outbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -1981,8 +1981,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": "",
                   "updateTime": 0,
@@ -2020,11 +2020,11 @@
           "uuid": "8cc79b73-fd5b-4cff-9e91-c4946aa11078",
           "collection": "/api/3/workflow_collections/eaf12624-2666-4702-b9ce-583f865c1103",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
           "name": "Remove Outbound Whitelisted Hosts",
-          "tag": "#Arbor AED",
+          "tag": "#Netscout AED",
           "recordTags": [
-            "Arbor",
+            "Netscout",
             "arbor-aed"
           ],
           "isActive": false,
@@ -2042,7 +2042,7 @@
               "status": null,
               "arguments": {
                 "route": "deb94335-85ed-46f5-b9c2-6fe5c576dc66",
-                "title": "Arbor AED: Remove Outbound Whitelisted Hosts",
+                "title": "Netscout AED: Remove Outbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
                 ],
@@ -2067,8 +2067,8 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Arbor AED",
-                "config": "''",
+                "name": "Netscout AED",
+                "config": "",
                 "params": {
                   "hostAddress": ""
                 },

@@ -1,8 +1,10 @@
-""" Copyright start
-  Copyright (C) 2008 - 2023 Fortinet Inc.
-  All rights reserved.
-  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
-  Copyright end """
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
+
 import time
 import requests, json
 from connectors.core.connector import get_logger, ConnectorError
@@ -111,6 +113,8 @@ def get_inbound_protection_groups(config, params):
 
 def update_inbound_protection_groups(config, params):
     aps = ArborAps(config)
+    pgid = ",".join([str(x) for x in params.get('pgid')])
+    params.update({'pgid': pgid})
     data = get_params(params)
     response = aps.make_request(endpoint='protection-groups/', method='PATCH', params=data)
     if response.get('protection-groups'):
@@ -121,6 +125,7 @@ def update_inbound_protection_groups(config, params):
 
 def add_inbound_blacklist_countries(config, params):
     aps = ArborAps(config)
+    params.update({'country': params.get('country').replace(" ","")})
     data = get_params(params)
     response = aps.make_request(endpoint='protection-groups/denied-countries/', method='POST', params=data)
     if response.get('countries'):
