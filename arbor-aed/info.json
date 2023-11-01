@@ -1,8 +1,8 @@
 {
   "name": "arbor-aed",
   "version": "1.0.0",
-  "label": "Arbor AED",
-  "description": "Arbor AED secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
+  "label": "Netscout AED",
+  "description": "Netscout AED is an inline security appliance deployed at the network perimeter (i.e. between router and firewall) that can automatically detect and block inbound threats (e.g. DDoS attacks, malware) and outbound malicious communication (i.e. C2, bad URLs) using unique, curated, ATLAS threat intelligence.",
   "publisher": "Fortinet",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
@@ -16,8 +16,8 @@
         "title": "Server URL",
         "name": "server_url",
         "type": "text",
-        "description": "Specify the server url of the Arbor AED instance.",
-        "tooltip": "Specify the server url of the Arbor AED instance.",
+        "description": "Specify the server url of the Netscout AED instance.",
+        "tooltip": "Specify the server url of the Netscout AED instance.",
         "required": true,
         "editable": true,
         "visible": true
@@ -29,8 +29,8 @@
         "required": true,
         "editable": true,
         "visible": true,
-        "description": "Specify the API Key generated in Arbor AED instance.",
-        "tooltip": "Specify the API Key generated in Arbor AED instance."
+        "description": "Specify the API Key generated in Netscout AED instance.",
+        "tooltip": "Specify the API Key generated in Netscout AED instance."
       },
       {
         "title": "Verify SSL",
@@ -159,8 +159,8 @@
           "title": "Protection Group Name",
           "name": "name",
           "type": "text",
-          "description": "Name of the protection group name that you want to create in Arbor AED.",
-          "tooltip": "Name of the protection group name that you want to create in Arbor AED.",
+          "description": "Name of the protection group name that you want to create in Netscout AED.",
+          "tooltip": "Name of the protection group name that you want to create in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true
@@ -169,7 +169,7 @@
           "title": "IP Addresses or CIDRs",
           "name": "prefixes",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited IP addresses or CIDRs belonging to the protection group that you want to create in Arbor AED. Note: Any IP Addresses or CIDRs that do not match the IP version of the specified protection group server type will be ignored.",
+          "description": "List of \u2018,\u2019 delimited IP addresses or CIDRs belonging to the protection group that you want to create in Netscout AED. Note: Any IP Addresses or CIDRs that do not match the IP version of the specified protection group server type will be ignored.",
           "tooltip": "List of \u2018,\u2019 delimited IP Addresses or CIDRs belonging to the protection group. Any IP Addresses or CIDRs that do not match the IP version of the server type will be ignored.",
           "visible": true,
           "editable": true,
@@ -180,8 +180,8 @@
           "title": "Protection Group Server Type",
           "name": "serverType",
           "type": "integer",
-          "description": "Server type of the Arbor AED group in which you want to create the protection group.",
-          "tooltip": "Server type of the Arbor AED group in which you want to create the protection group.",
+          "description": "Server type of the Netscout AED group in which you want to create the protection group.",
+          "tooltip": "Server type of the Netscout AED group in which you want to create the protection group.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -191,8 +191,8 @@
           "title": "Description",
           "name": "description",
           "type": "text",
-          "description": "Description of the protection group name that you want to create in Arbor AED.",
-          "tooltip": "Description of the protection group name that you want to create in Arbor AED.",
+          "description": "Description of the protection group name that you want to create in Netscout AED.",
+          "tooltip": "Description of the protection group name that you want to create in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -202,8 +202,8 @@
           "title": "Active",
           "name": "active",
           "type": "checkbox",
-          "description": "Select this checkbox to set the mode of the protection group that you want to create in Arbor AED to 'Active'.",
-          "tooltip": "Select this checkbox to set the mode of the protection group that you want to create in Arbor AED to 'Active'.",
+          "description": "Select this checkbox to set the mode of the protection group that you want to create in Netscout AED to 'Active'.",
+          "tooltip": "Select this checkbox to set the mode of the protection group that you want to create in Netscout AED to 'Active'.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -219,8 +219,8 @@
             "Medium",
             "High"
           ],
-          "description": "Protection level that you want to set for the protection group that you want to create in Arbor AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High",
-          "tooltip": "Protection level that you want to set for the protection group that you want to create in Arbor AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High",
+          "description": "Protection level that you want to set for the protection group that you want to create in Netscout AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High",
+          "tooltip": "Protection level that you want to set for the protection group that you want to create in Netscout AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High",
           "visible": true,
           "editable": true,
           "required": false,
@@ -267,8 +267,8 @@
           "title": "Protection Group Identifier",
           "name": "pgid",
           "type": "integer",
-          "description": "Identifier of the protection group that you want to retrieve from Arbor AED.",
-          "tooltip": "Identifier of the protection group that you want to retrieve from Arbor AED.",
+          "description": "Identifier of the protection group that you want to retrieve from Netscout AED.",
+          "tooltip": "Identifier of the protection group that you want to retrieve from Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -278,8 +278,8 @@
           "title": "Protection Group Name",
           "name": "name",
           "type": "text",
-          "description": "Name of the protection group that you want to retrieve from Arbor AED.",
-          "tooltip": "Name of the protection group that you want to retrieve from Arbor AED.",
+          "description": "Name of the protection group that you want to retrieve from Netscout AED.",
+          "tooltip": "Name of the protection group that you want to retrieve from Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -289,8 +289,8 @@
           "title": "Description",
           "name": "description",
           "type": "text",
-          "description": "Description of the protection group that you want to retrieve from Arbor AED.",
-          "tooltip": "Description of the protection group that you want to retrieve from Arbor AED.",
+          "description": "Description of the protection group that you want to retrieve from Netscout AED.",
+          "tooltip": "Description of the protection group that you want to retrieve from Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -303,8 +303,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "tooltip": "Time of the creation of the protection group that you want to retrieve from Arbor AED.",
-          "description": "Time of the creation of the protection group that you want to retrieve from Arbor AED."
+          "tooltip": "Time of the creation of the protection group that you want to retrieve from Netscout AED.",
+          "description": "Time of the creation of the protection group that you want to retrieve from Netscout AED."
         },
         {
           "title": "Active",
@@ -314,8 +314,8 @@
             "Active",
             "Inactive"
           ],
-          "description": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
-          "tooltip": "Mode, Active or Inactive, of the protection group that you want to retrieve from Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "description": "Mode, Active or Inactive, of the protection group that you want to retrieve from Netscout AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "tooltip": "Mode, Active or Inactive, of the protection group that you want to retrieve from Netscout AED. Selecting this option sets the mode of the protection group to 'Active'.",
           "visible": true,
           "editable": true,
           "required": false
@@ -330,8 +330,8 @@
             "Medium",
             "High"
           ],
-          "description": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Arbor AED.",
-          "tooltip": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Arbor AED.",
+          "description": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Netscout AED.",
+          "tooltip": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -430,8 +430,8 @@
           "title": "Protection Group IDs",
           "name": "pgid",
           "type": "text",
-          "tooltip": "List of protection group IDs that you want to update in Arbor AED.",
-          "description": "List of protection group IDs that you want to update in Arbor AED.",
+          "tooltip": "List of protection group IDs that you want to update in Netscout AED.",
+          "description": "List of protection group IDs that you want to update in Netscout AED.",
           "placeholder": "Eg. 7",
           "visible": true,
           "editable": true,
@@ -442,8 +442,8 @@
           "title": "Active",
           "name": "active",
           "type": "checkbox",
-          "description": "Mode, Active or Inactive, of the protection group that you want to update in Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
-          "tooltip": "Mode, Active or Inactive, of the protection group that you want to update in Arbor AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "description": "Mode, Active or Inactive, of the protection group that you want to update in Netscout AED. Selecting this option sets the mode of the protection group to 'Active'.",
+          "tooltip": "Mode, Active or Inactive, of the protection group that you want to update in Netscout AED. Selecting this option sets the mode of the protection group to 'Active'.",
           "visible": true,
           "editable": true,
           "required": false
@@ -458,7 +458,7 @@
             "Medium",
             "High"
           ],
-          "description": "Protection level that you want to set for the protection group that you want to update in Arbor AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High ",
+          "description": "Protection level that you want to set for the protection group that you want to update in Netscout AED. You can choose from the following options: None = use the global protection level, 1 = Low (default), 2 = Medium, and 3 = High ",
           "tooltip": "The protection level (None = use the global protection level, 1 = low, 2 = medium, 3 = high). Default: 1",
           "visible": true,
           "editable": true,
@@ -470,7 +470,7 @@
     {
       "title": "Add Inbound Blacklist Countries",
       "operation": "add_inbound_blacklist_countries",
-      "description": "Adds one or more countries to the Arbor AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more countries to the Netscout AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_countries",
       "output_schema": {
@@ -488,8 +488,8 @@
           "title": "Country Code",
           "name": "country",
           "type": "text",
-          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Arbor AED.",
-          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Arbor AED.",
+          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Netscout AED.",
+          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Netscout AED.",
           "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
@@ -536,8 +536,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -563,8 +563,8 @@
           "title": "Country Code",
           "name": "country",
           "type": "text",
-          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Netscout AED.",
           "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
@@ -609,8 +609,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the countries that are part of the blacklist in Netscout AED."
         },
         {
           "title": "Update Time",
@@ -619,8 +619,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Arbor AED",
-          "tooltip": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Arbor AED"
+          "description": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Netscout AED",
+          "tooltip": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Netscout AED"
         },
         {
           "title": "Queue",
@@ -697,7 +697,7 @@
     {
       "title": "Remove Inbound Blacklisted Countries",
       "operation": "remove_inbound_blacklisted_countries",
-      "description": "Removes one or more countries from the Arbor AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+      "description": "Removes one or more countries from the Netscout AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_countries",
       "output_schema": {},
@@ -706,8 +706,8 @@
           "title": "Country",
           "name": "country",
           "type": "text",
-          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Arbor AED.",
-          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Arbor AED.",
+          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Netscout AED.",
+          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Netscout AED.",
           "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
@@ -754,8 +754,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the country from the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -763,7 +763,7 @@
     {
       "title": "Add Inbound Blacklist Domains",
       "operation": "add_inbound_blacklist_domains",
-      "description": "Adds one or more domains to the Arbor AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more domains to the Netscout AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_domains",
       "output_schema": {
@@ -781,8 +781,8 @@
           "title": "Domain",
           "name": "domain",
           "type": "text",
-          "description": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Arbor AED.",
-          "tooltip": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Arbor AED.",
+          "description": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Netscout AED.",
+          "tooltip": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Netscout AED.",
           "placeholder": "Eg. wolframalpha.com,bing.com or [\"wolframalpha.com\",\"bing.com\"] or yahoo.com",
           "visible": true,
           "editable": true,
@@ -829,8 +829,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -856,8 +856,8 @@
           "title": "Domain",
           "name": "domain",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "description": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Netscout AED.",
           "placeholder": "E.g [\"wolframalpha.com\",\"bing.com\"] or [\"bing.com\"] or bing.com",
           "visible": true,
           "editable": true,
@@ -904,8 +904,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the domains that are part of the blacklist in Netscout AED."
         },
         {
           "title": "Update Time",
@@ -914,8 +914,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Arbor AED."
+          "description": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Netscout AED."
         },
         {
           "title": "Queue",
@@ -992,7 +992,7 @@
     {
       "title": "Remove Inbound Blacklisted Domains",
       "operation": "remove_inbound_blacklisted_domains",
-      "description": "Removes one or more domains from the Arbor AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+      "description": "Removes one or more domains from the Netscout AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_domains",
       "output_schema": {},
@@ -1001,8 +1001,8 @@
           "title": "Domain",
           "name": "domain",
           "type": "text",
-          "tooltip": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Arbor AED.",
-          "description": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Arbor AED.",
+          "tooltip": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Netscout AED.",
+          "description": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Netscout AED.",
           "placeholder": "Eg. microsoft.com,ubuntu.co.uk or [\"microsoft.com\",\"ubuntu.co.uk\"] or microsoft.com",
           "visible": true,
           "editable": true,
@@ -1049,8 +1049,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the domain from the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1058,7 +1058,7 @@
     {
       "title": "Add Inbound Blacklist Hosts",
       "operation": "add_inbound_blacklist_hosts",
-      "description": "Adds one or more hosts to the Arbor AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more hosts to the Netscout AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_hosts",
       "output_schema": {
@@ -1077,8 +1077,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"] or 8.8.8.8",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -1124,8 +1124,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1151,8 +1151,8 @@
           "title": "Host Address",
           "name": "hostAddress",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Netscout AED.",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"10.10.10.10\",\"8.8.8.8\"]",
           "visible": true,
           "editable": true,
@@ -1199,8 +1199,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the blacklist in Netscout AED."
         },
         {
           "title": "Update Time",
@@ -1209,8 +1209,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED."
+          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED."
         },
         {
           "title": "Queue",
@@ -1287,7 +1287,7 @@
     {
       "title": "Remove Inbound Blacklisted Hosts",
       "operation": "remove_inbound_blacklisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_hosts",
       "output_schema": {},
@@ -1297,8 +1297,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or 8.8.8.8",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -1344,8 +1344,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1353,7 +1353,7 @@
     {
       "title": "Add Inbound Whitelisted Hosts",
       "operation": "add_inbound_whitelisted_hosts",
-      "description": "Adds one or more hosts to the Arbor AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
+      "description": "Adds one or more hosts to the Netscout AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
       "category": "investigation",
       "annotation": "add_inbound_whitelisted_hosts",
       "output_schema": {
@@ -1372,8 +1372,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"] or 8.8.8.8",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -1419,8 +1419,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1446,8 +1446,8 @@
           "title": "Host Address",
           "name": "hostAddress",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound whitelist in Arbor AED.",
-          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound whitelist in Arbor AED.",
+          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound whitelist in Netscout AED.",
+          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound whitelist in Netscout AED.",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"]",
           "visible": true,
           "editable": true,
@@ -1494,8 +1494,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the hosts that are part of the whitelist in Netscout AED."
         },
         {
           "title": "Update Time",
@@ -1504,8 +1504,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Arbor AED."
+          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED."
         },
         {
           "title": "Queue",
@@ -1582,7 +1582,7 @@
     {
       "title": "Remove Inbound Whitelisted Hosts",
       "operation": "remove_inbound_whitelisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Arbor AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_whitelisted_hosts",
       "output_schema": {},
@@ -1592,8 +1592,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or 8.8.8.8",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -1639,8 +1639,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1648,7 +1648,7 @@
     {
       "title": "Add Inbound Blacklist URLs",
       "operation": "add_inbound_blacklist_urls",
-      "description": "Adds one or more URLs to the Arbor AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more URLs to the Netscout AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_urls",
       "output_schema": {
@@ -1666,8 +1666,8 @@
           "title": "URL",
           "name": "url",
           "type": "text",
-          "tooltip": "URL or a comma-separated list of URLs that you want to add to the blacklist in Arbor AED.",
-          "description": "URL or a comma-separated list of URLs that you want to add to the blacklist in Arbor AED.",
+          "tooltip": "URL or a comma-separated list of URLs that you want to add to the blacklist in Netscout AED.",
+          "description": "URL or a comma-separated list of URLs that you want to add to the blacklist in Netscout AED.",
           "placeholder": "yahoo.com/mail,google.com/calendar or [\"yahoo.com/mail\",\"google.com/calendar\"] or maps.google.com/maps",
           "visible": true,
           "editable": true,
@@ -1714,8 +1714,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1741,8 +1741,8 @@
           "title": "URL",
           "name": "url",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited URLs that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "List of \u2018,\u2019 delimited URLs that you want to retrieve from the inbound blacklist in Arbor AED.",
+          "description": "List of \u2018,\u2019 delimited URLs that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "List of \u2018,\u2019 delimited URLs that you want to retrieve from the inbound blacklist in Netscout AED.",
           "placeholder": "[\"yahoo.com/mail\",\"google.com/calendar\"] or {\"maps.google.com/maps\"]",
           "visible": true,
           "editable": true,
@@ -1789,8 +1789,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to retrieve the URLs that are part of the blacklist in Netscout AED."
         },
         {
           "title": "Update Time",
@@ -1799,8 +1799,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Arbor AED.",
-          "tooltip": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Arbor AED."
+          "description": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "tooltip": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Netscout AED."
         },
         {
           "title": "Queue",
@@ -1877,7 +1877,7 @@
     {
       "title": "Remove Inbound Blacklisted URLs",
       "operation": "remove_inbound_blacklisted_urls",
-      "description": "Removes one or more URLs from the Arbor AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Removes one or more URLs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_urls",
       "output_schema": {},
@@ -1886,8 +1886,8 @@
           "title": "URL",
           "name": "url",
           "type": "text",
-          "description": "URL or a comma-separated list of URLs that you want to remove from the blacklist in Arbor AED.",
-          "tooltip": "URL or a comma-separated list of URLs that you want to remove from the blacklist in Arbor AED.",
+          "description": "URL or a comma-separated list of URLs that you want to remove from the blacklist in Netscout AED.",
+          "tooltip": "URL or a comma-separated list of URLs that you want to remove from the blacklist in Netscout AED.",
           "placeholder": "yahoo.com/mail,google.com/calendar or [\"yahoo.com/mail\",\"google.com/calendar\"] or maps.google.com/maps",
           "visible": true,
           "editable": true,
@@ -1934,8 +1934,8 @@
             ]
           },
           "value": "Protection Group ID",
-          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Arbor AED.",
-          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Arbor AED."
+          "tooltip": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID (cid) or Protection Group ID (pgid) based on which you want to remove the URLs from the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -1943,7 +1943,7 @@
     {
       "title": "Add Outbound Blacklist Hosts",
       "operation": "add_outbound_blacklist_hosts",
-      "description": "Adds one or more hosts to the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified.",
+      "description": "Adds one or more hosts to the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified.",
       "category": "investigation",
       "annotation": "add_outbound_blacklist_hosts",
       "output_schema": {
@@ -1960,8 +1960,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1,2.2.2.2 or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -1989,8 +1989,8 @@
           "title": "Host Address",
           "name": "hostAddress",
           "type": "text",
-          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound blacklist in Arbor AED.",
-          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound blacklist in Arbor AED.",
+          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound blacklist in Netscout AED.",
+          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound blacklist in Netscout AED.",
           "placeholder": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "visible": true,
           "editable": true,
@@ -2001,8 +2001,8 @@
           "title": "Update Time",
           "name": "updateTime",
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Arbor AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Arbor AED.",
+          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Netscout AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -2082,7 +2082,7 @@
     {
       "title": "Remove Outbound Blacklisted Hosts",
       "operation": "remove_outbound_blacklisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
       "category": "investigation",
       "annotation": "remove_outbound_blacklisted_hosts",
       "output_schema": {},
@@ -2092,8 +2092,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 1.1.1.1,2.2.2.2 or [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -2105,7 +2105,7 @@
     {
       "title": "Add Outbound Whitelist Hosts",
       "operation": "add_outbound_whitelisted_hosts",
-      "description": "Adds one or more hosts to the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified.",
+      "description": "Adds one or more hosts to the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified.",
       "category": "investigation",
       "annotation": "add_outbound_whitelisted_hosts",
       "output_schema": {
@@ -2122,8 +2122,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1,2.2.2.2 or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
@@ -2151,8 +2151,8 @@
           "title": "Host Address",
           "name": "hostAddress",
           "type": "text",
-          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Arbor AED.",
-          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Arbor AED.",
+          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Netscout AED.",
+          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Netscout AED.",
           "placeholder": "E.g. [\"1.1.1.1\",\"2.2.2.2\"]",
           "visible": true,
           "editable": true,
@@ -2163,8 +2163,8 @@
           "title": "Update Time",
           "name": "updateTime",
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Arbor AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Arbor AED.",
+          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Netscout AED.",
+          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -2244,7 +2244,7 @@
     {
       "title": "Remove Outbound Whitelisted Hosts",
       "operation": "remove_outbound_whitelisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Arbor AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
       "category": "investigation",
       "annotation": "remove_outbound_whitelisted_hosts",
       "output_schema": {},
@@ -2254,8 +2254,8 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 1.1.1.1,2.2.2.2 or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Arbor AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Arbor AED.",
+          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Netscout AED.",
+          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true,
