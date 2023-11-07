@@ -107,6 +107,7 @@ def create_inbound_protection_groups(config, params):
 
 def get_inbound_protection_groups(config, params):
     aps = ArborAps(config)
+
     params = get_params(params)
     return aps.make_request(endpoint='protection-groups/', params=params)
 
