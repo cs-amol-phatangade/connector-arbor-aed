@@ -48,7 +48,7 @@
     {
       "title": "Get Countries",
       "operation": "get_countries",
-      "description": "Retrieves the Arbor Networks AED country codes and names based on the input parameters you have specified.",
+      "description": "Retrieves the Netscout AED country codes and names based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_countries",
       "output_schema": {
@@ -125,6 +125,15 @@
           "visible": true,
           "editable": true,
           "required": false
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -132,7 +141,7 @@
     {
       "title": "Create Inbound Protection Groups",
       "operation": "create_inbound_protection_groups",
-      "description": "Creates an Arbor Networks AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
+      "description": "Creates an Netscout AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_inbound_protection_groups",
       "output_schema": {
@@ -232,7 +241,7 @@
     {
       "title": "Get Inbound Protection Groups",
       "operation": "get_inbound_protection_groups",
-      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Arbor Networks AED protection groups based on the input parameters you have specified.",
+      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Netscout AED protection groups based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_inbound_protection_groups",
       "output_schema": {
@@ -386,7 +395,7 @@
         },
         {
           "title": "Other Fields",
-          "description": "Other fields that you want to use to filter results returned by this operation. You can specify fields such as 'Search Criteria', which is used to determine dynamic membership or the 'Links' field defined JSON requests.",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -538,6 +547,16 @@
           "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Netscout AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the country to the blacklist in Netscout AED."
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a message to associate with each country that you add to the deny list.",
+          "description": "Specify a message to associate with each country that you add to the deny list."
         }
       ],
       "enabled": true
@@ -588,6 +607,7 @@
                 "title": "Central Configuration ID",
                 "name": "cid",
                 "type": "integer",
+                "description": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
                 "tooltip": "List of \u2018,\u2019 delimited central configuration IDs. Cannot be used with the Protection Group ID (pgid) parameter.",
                 "visible": true,
                 "editable": true,
@@ -600,6 +620,7 @@
                 "title": "Protection Group ID",
                 "name": "pgid",
                 "type": "integer",
+                "description": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
                 "tooltip": "List of \u2018,\u2019 delimited protection group IDs. Cannot be used with the Central Configuration ID (cid) parameter.",
                 "visible": true,
                 "editable": true,
@@ -690,6 +711,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -831,6 +861,16 @@
           "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Netscout AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the domain(s) to the blacklist in Netscout AED."
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a message to associate with each domain that you add to the deny list.",
+          "description": "Specify a message to associate with each domain that you add to the deny list."
         }
       ],
       "enabled": true
@@ -985,6 +1025,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -1126,6 +1175,16 @@
           "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Netscout AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Netscout AED."
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a description that applies to all of the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host.",
+          "description": "Specify a description that applies to all of the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host."
         }
       ],
       "enabled": true
@@ -1280,6 +1339,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -1421,6 +1489,16 @@
           "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Netscout AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Netscout AED."
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a description that applies to all the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host.",
+          "description": "Specify a description that applies to all the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host."
         }
       ],
       "enabled": true
@@ -1575,6 +1653,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -1716,6 +1803,16 @@
           "value": "Protection Group ID",
           "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Netscout AED.",
           "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the URL(s) to the blacklist in Netscout AED."
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a message to associate with each URL that you add to the deny list.",
+          "description": "Specify a message to associate with each URL that you add to the deny list."
         }
       ],
       "enabled": true
@@ -1870,6 +1967,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -1966,6 +2072,16 @@
           "editable": true,
           "required": true,
           "value": ""
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a description that applies to all the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host.",
+          "description": "Specify a description that applies to all the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host."
         }
       ],
       "enabled": true
@@ -2075,6 +2191,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
@@ -2128,6 +2253,16 @@
           "editable": true,
           "required": true,
           "value": ""
+        },
+        {
+          "title": "Annotation",
+          "type": "text",
+          "name": "annotation",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify a description that applies to all the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host.",
+          "description": "Specify a description that applies to all the specified hosts or a comma-separated list of descriptions, each of which applies to a specific host."
         }
       ],
       "enabled": true
@@ -2237,6 +2372,15 @@
           "editable": true,
           "required": false,
           "value": ""
+        },
+        {
+          "title": "Other Fields",
+          "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
         }
       ],
       "enabled": true
