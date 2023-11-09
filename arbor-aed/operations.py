@@ -172,7 +172,6 @@ def remove_inbound_blacklisted_domains(config, params):
 def add_inbound_blacklist_hosts(config, params):
     aps = ArborAps(config)
     data = get_params(params)
-    data["annotation"] = "FortiSOAR"
     response = aps.make_request(endpoint='protection-groups/denied-hosts/', method='POST', params=data)
     if response.get('hosts'):
         return response

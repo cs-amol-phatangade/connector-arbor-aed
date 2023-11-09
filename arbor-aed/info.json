@@ -2,22 +2,22 @@
   "name": "arbor-aed",
   "version": "1.0.0",
   "label": "Netscout AED",
-  "description": "Netscout AED is an inline security appliance deployed at the network perimeter (i.e. between router and firewall) that can automatically detect and block inbound threats (e.g. DDoS attacks, malware) and outbound malicious communication (i.e. C2, bad URLs) using unique, curated, ATLAS threat intelligence.",
+  "description": "Netscout Arbor Edge Defense (AED) secures the internet data center edge from threats against availability — specifically from application-layer, distributed denial of service (DDoS) attacks.",
   "publisher": "Fortinet",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Network Security",
   "cs_approved": true,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/netscout-arbor-edge-defense-aed/713/netscout-aed-v1-0-0",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
         "name": "server_url",
         "type": "text",
-        "description": "Specify the server url of the Netscout AED instance.",
-        "tooltip": "Specify the server url of the Netscout AED instance.",
+        "description": "Specify the server URL of the Netscout AED instance.",
+        "tooltip": "Specify the server URL of the Netscout AED instance.",
         "required": true,
         "editable": true,
         "visible": true
@@ -48,7 +48,7 @@
     {
       "title": "Get Countries",
       "operation": "get_countries",
-      "description": "Retrieves the Netscout AED country codes and names based on the input parameters you have specified.",
+      "description": "Retrieves the Arbor Networks AED country codes and names based on the country names and other filter criteria you have specified.",
       "category": "investigation",
       "annotation": "get_countries",
       "output_schema": {
@@ -67,9 +67,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited countries name.",
+          "tooltip": "Specify the list of country names, separated by a +, based on which you want to filter the results of this operation.",
           "placeholder": "Eg. Australia+Belgium",
-          "description": "Specify the list of \u2018+\u2019 delimited country names based on which you want to filter the results of this operation."
+          "description": "Specify the list of country names, separated by a +, based on which you want to filter the results of this operation."
         },
         {
           "title": "Response Fields",
@@ -79,8 +79,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "Eg. country,name or name or country",
-          "tooltip": "List of \u2018,\u2019 delimited key",
-          "description": "Specify the list of \u2018+\u2019 delimited keys that you want to in the results of this operation."
+          "tooltip": "Specify the list of keys, separated by a +, based on which you want to filter the results of this operation.",
+          "description": "Specify the list of keys, separated by a +, based on which you want to filter the results of this operation."
         },
         {
           "title": "Sort",
@@ -89,8 +89,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name.",
-          "description": "Sort the countries retrieved by this operation by a key i.e., either country or name. By default, this is set to name."
+          "tooltip": "Specify the sorting criteria to sort the results retrieved by this operation. You can use either the country or the name as the sorting key. By default, this is set to name.",
+          "description": "Specify the sorting criteria to sort the results retrieved by this operation. You can use either the country or the name as the sorting key. By default, this is set to name."
         },
         {
           "title": "Direction",
@@ -100,8 +100,8 @@
             "Ascending",
             "Descending"
           ],
-          "tooltip": "The direction in which results are sorted (ASC or DESC). Note: This parameter can only be used when the \"Sort\" parameter is specified.",
-          "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "tooltip": "Select the sorting order in which to sort the results of this operation. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
+          "description": "Select the sorting order in which to sort the results of this operation. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
           "required": false
@@ -110,8 +110,8 @@
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
+          "description": "Specify the index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
+          "tooltip": "Specify the index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say countries starting from the 10th country. By default, this is set as 1.",
           "visible": true,
           "editable": true,
           "required": false
@@ -120,8 +120,8 @@
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
           "required": false
@@ -129,6 +129,7 @@
         {
           "title": "Other Fields",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -141,7 +142,7 @@
     {
       "title": "Create Inbound Protection Groups",
       "operation": "create_inbound_protection_groups",
-      "description": "Creates an Netscout AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
+      "description": "Creates an Arbor Networks AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_inbound_protection_groups",
       "output_schema": {
@@ -168,8 +169,8 @@
           "title": "Protection Group Name",
           "name": "name",
           "type": "text",
-          "description": "Name of the protection group name that you want to create in Netscout AED.",
-          "tooltip": "Name of the protection group name that you want to create in Netscout AED.",
+          "description": "Specify the name of the protection group to create in Netscout AED.",
+          "tooltip": "Specify the name of the protection group to create in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": true
@@ -178,41 +179,38 @@
           "title": "IP Addresses or CIDRs",
           "name": "prefixes",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited IP addresses or CIDRs belonging to the protection group that you want to create in Netscout AED. Note: Any IP Addresses or CIDRs that do not match the IP version of the specified protection group server type will be ignored.",
-          "tooltip": "List of \u2018,\u2019 delimited IP Addresses or CIDRs belonging to the protection group. Any IP Addresses or CIDRs that do not match the IP version of the server type will be ignored.",
+          "description": "Specify the list of comma-separated IP addresses or CIDRs to the protection group being created in Netscout AED.  \n\nNOTE: Any IP Addresses or CIDRs that do not match the IP version of the specified protection group server type is ignored.",
+          "tooltip": "Specify the list of comma-separated IP addresses or CIDRs to the protection group being created in Netscout AED.  \n\nNOTE: Any IP Addresses or CIDRs that do not match the IP version of the specified protection group server type is ignored.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Protection Group Server Type",
           "name": "serverType",
           "type": "integer",
-          "description": "Server type of the Netscout AED group in which you want to create the protection group.",
-          "tooltip": "Server type of the Netscout AED group in which you want to create the protection group.",
+          "description": "Specify the Netscout AED group server type in which to create the protection group.",
+          "tooltip": "Specify the Netscout AED group server type in which to create the protection group.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Description",
           "name": "description",
           "type": "text",
-          "description": "Description of the protection group name that you want to create in Netscout AED.",
-          "tooltip": "Description of the protection group name that you want to create in Netscout AED.",
+          "description": "Specify the description of the protection group being created in Netscout AED.",
+          "tooltip": "Specify the description of the protection group being created in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Active",
           "name": "active",
           "type": "checkbox",
-          "description": "Select this checkbox to set the mode of the protection group that you want to create in Netscout AED to 'Active'.",
-          "tooltip": "Select this checkbox to set the mode of the protection group that you want to create in Netscout AED to 'Active'.",
+          "description": "Select this checkbox to set the mode of the protection group to Active in Netscout AED.",
+          "tooltip": "Select this checkbox to set the mode of the protection group to Active in Netscout AED.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -241,7 +239,7 @@
     {
       "title": "Get Inbound Protection Groups",
       "operation": "get_inbound_protection_groups",
-      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Netscout AED protection groups based on the input parameters you have specified.",
+      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Arbor Networks AED protection groups based on the protection group identifier, name, and other filter criteria you have specified.",
       "category": "investigation",
       "annotation": "get_inbound_protection_groups",
       "output_schema": {
@@ -276,34 +274,31 @@
           "title": "Protection Group Identifier",
           "name": "pgid",
           "type": "integer",
-          "description": "Identifier of the protection group that you want to retrieve from Netscout AED.",
-          "tooltip": "Identifier of the protection group that you want to retrieve from Netscout AED.",
+          "description": "Specify the protection group identifier to filter the results retrieved from Netscout AED.",
+          "tooltip": "Specify the protection group identifier to filter the results retrieved from Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Protection Group Name",
           "name": "name",
           "type": "text",
-          "description": "Name of the protection group that you want to retrieve from Netscout AED.",
-          "tooltip": "Name of the protection group that you want to retrieve from Netscout AED.",
+          "description": "Specify the name of the protection group to filter the results retrieved from Netscout AED.",
+          "tooltip": "Specify the name of the protection group to filter the results retrieved from Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Description",
           "name": "description",
           "type": "text",
-          "description": "Description of the protection group that you want to retrieve from Netscout AED.",
-          "tooltip": "Description of the protection group that you want to retrieve from Netscout AED.",
+          "description": "Specify the description of the protection group to filter the results retrieved from Netscout AED.",
+          "tooltip": "Specify the description of the protection group to filter the results retrieved from Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Created Time",
@@ -312,8 +307,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "tooltip": "Time of the creation of the protection group that you want to retrieve from Netscout AED.",
-          "description": "Time of the creation of the protection group that you want to retrieve from Netscout AED."
+          "tooltip": "Select the time of the creation of the protection group to filter the results retrieved from Netscout AED.",
+          "description": "Select the time of the creation of the protection group to filter the results retrieved from Netscout AED."
         },
         {
           "title": "Active",
@@ -343,8 +338,7 @@
           "tooltip": "Protection level, None, Low, Medium, or High of the protection group that you want to retrieve from Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Sort",
@@ -353,8 +347,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Key used to sort the protection groups retrieved by this operation.",
-          "description": "Key used to sort the protection groups retrieved by this operation."
+          "tooltip": "Specify the sorting key used to sort the protection groups retrieved by this operation.",
+          "description": "Specify the sorting key used to sort the protection groups retrieved by this operation."
         },
         {
           "title": "Direction",
@@ -368,33 +362,31 @@
           "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -439,13 +431,12 @@
           "title": "Protection Group IDs",
           "name": "pgid",
           "type": "text",
-          "tooltip": "List of protection group IDs that you want to update in Netscout AED.",
-          "description": "List of protection group IDs that you want to update in Netscout AED.",
+          "tooltip": "Specify a comma-separated list of protection group IDs to update in Netscout AED.",
+          "description": "Specify a comma-separated list of protection group IDs to update in Netscout AED.",
           "placeholder": "Eg. 7",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Active",
@@ -479,7 +470,7 @@
     {
       "title": "Add Inbound Blacklist Countries",
       "operation": "add_inbound_blacklist_countries",
-      "description": "Adds one or more countries to the Netscout AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more countries to the Netscout AED blocked-list based on the country codes and protection group IDs (PGID) or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_countries",
       "output_schema": {
@@ -497,13 +488,12 @@
           "title": "Country Code",
           "name": "country",
           "type": "text",
-          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Netscout AED.",
-          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to add to the blacklist in Netscout AED.",
+          "description": "Specify the ISO-standardized country code or a comma-separated list of country codes to add to the blocked-list in Netscout AED.",
+          "tooltip": "Specify the ISO-standardized country code or a comma-separated list of country codes to add to the blocked-list in Netscout AED.",
           "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -564,7 +554,7 @@
     {
       "title": "Get Inbound Blacklisted Countries",
       "operation": "get_inbound_blacklisted_countries",
-      "description": "Retrieves all the inbound blacklisted countries or specific inbound blacklisted countries based on the input parameters you have specified. By default, 10 blacklisted countries are returned. To return blacklisted countries for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects countries that are globally blacklisted.",
+      "description": "Retrieves all the inbound blocked-list countries or specific inbound blocked-list countries based on the country codes, protection group IDs, central configuration IDs, or other filter criteria you have specified. By default, 10 blocked-list countries are returned. An ID of -1 selects countries that are in the global blocked-list.",
       "category": "investigation",
       "annotation": "get_inbound_blacklisted_countries",
       "output_schema": {
@@ -582,13 +572,12 @@
           "title": "Country Code",
           "name": "country",
           "type": "text",
-          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "description": "Specify the ISO-standardized country code or a comma-separated list of country codes to retrieve from the blocked-list in Netscout AED.",
+          "tooltip": "Specify the ISO-standardized country code or a comma-separated list of country codes to retrieve from the blocked-list in Netscout AED.",
           "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Select CID or PGID",
@@ -640,8 +629,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Netscout AED",
-          "tooltip": "Last updated or set time for the countries that you want to retrieve from the inbound blacklist in Netscout AED"
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation."
         },
         {
           "title": "Queue",
@@ -650,9 +639,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation.",
           "placeholder": "Eg. MF+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation. "
         },
         {
           "title": "Response Fields",
@@ -662,8 +651,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "Eg. country,updateTime,cid or name or country etc.",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -687,33 +676,31 @@
           "description": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. By default, this page will be sorted in the 'Ascending' order of country code. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -727,7 +714,7 @@
     {
       "title": "Remove Inbound Blacklisted Countries",
       "operation": "remove_inbound_blacklisted_countries",
-      "description": "Removes one or more countries from the Netscout AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+      "description": "Removes one or more countries from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the country codes, protection group IDs, central configuration IDs, or other filter criteria you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_countries",
       "output_schema": {},
@@ -736,13 +723,12 @@
           "title": "Country",
           "name": "country",
           "type": "text",
-          "description": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Netscout AED.",
-          "tooltip": "ISO standardized country codes or a comma-separated list of country codes that you want to remove from the blacklist in Netscout AED.",
+          "description": "Specify the ISO-standardized country code or a comma-separated list of country codes to remove from the blocked-list in Netscout AED.",
+          "tooltip": "Specify the ISO-standardized country code or a comma-separated list of country codes to remove from the blocked-list in Netscout AED.",
           "placeholder": "Eg. AZ,MF or AZ",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -793,7 +779,7 @@
     {
       "title": "Add Inbound Blacklist Domains",
       "operation": "add_inbound_blacklist_domains",
-      "description": "Adds one or more domains to the Netscout AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more domains to the Netscout AED blocked-list based on the domain names, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_domains",
       "output_schema": {
@@ -811,13 +797,12 @@
           "title": "Domain",
           "name": "domain",
           "type": "text",
-          "description": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Netscout AED.",
-          "tooltip": "Domain name or a comma-separated list of domain names that you want to add to the blacklist in Netscout AED.",
+          "description": "Specify a domain name or a comma-separated list of domain names to add to the blocked-list in Netscout AED.",
+          "tooltip": "Specify a domain name or a comma-separated list of domain names to add to the blocked-list in Netscout AED.",
           "placeholder": "Eg. wolframalpha.com,bing.com or [\"wolframalpha.com\",\"bing.com\"] or yahoo.com",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -878,7 +863,7 @@
     {
       "title": "Get Inbound Blacklisted Domains",
       "operation": "get_inbound_blacklisted_domains",
-      "description": "Retrieves all the inbound blacklisted domains or specific inbound blacklisted domains based on the input parameters you have specified. To return blacklisted domains for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+      "description": "Retrieves all the inbound blocked-list domains or specific inbound blocked-list domains based on the domain names, protection group IDs, central configuration IDs, or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
       "category": "investigation",
       "annotation": "get_inbound_blacklisted_domains",
       "output_schema": {
@@ -896,13 +881,12 @@
           "title": "Domain",
           "name": "domain",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "List of \u2018,\u2019 delimited domain names that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "description": "Specify comma-separated list of domains to retrieve from the blocked-list in Netscout AED.",
+          "tooltip": "Specify comma-separated list of domains to retrieve from the blocked-list in Netscout AED.",
           "placeholder": "E.g [\"wolframalpha.com\",\"bing.com\"] or [\"bing.com\"] or bing.com",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Select CID or PGID",
@@ -954,8 +938,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "Last updated or set time for the domains that you want to retrieve from the inbound blacklist in Netscout AED."
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation."
         },
         {
           "title": "Queue",
@@ -964,9 +948,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation. ",
           "placeholder": "Eg. wolframalpha.com+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation. "
         },
         {
           "title": "Response Fields",
@@ -976,8 +960,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "Eg. domain,updateTime,cid or domain.",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -986,8 +970,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Key used to sort the domains retrieved by this operation.",
-          "description": "Key used to sort the domains retrieved by this operation."
+          "tooltip": "Specify the sorting key to sort the results retrieved by this operation.",
+          "description": "Specify the sorting key to sort the results retrieved by this operation."
         },
         {
           "title": "Direction",
@@ -1001,33 +985,31 @@
           "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -1041,7 +1023,7 @@
     {
       "title": "Remove Inbound Blacklisted Domains",
       "operation": "remove_inbound_blacklisted_domains",
-      "description": "Removes one or more domains from the Netscout AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+      "description": "Removes one or more domains from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the domain names, protection group IDs, or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_domains",
       "output_schema": {},
@@ -1050,13 +1032,12 @@
           "title": "Domain",
           "name": "domain",
           "type": "text",
-          "tooltip": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Netscout AED.",
-          "description": "Domain name or a comma-separated list of domain names that you want to remove from the blacklist in Netscout AED.",
+          "tooltip": "Specify a domain name or a comma-separated list of domain names to remove from the blocked-list in Netscout AED.",
+          "description": "Specify a domain name or a comma-separated list of domain names to remove from the blocked-list in Netscout AED.",
           "placeholder": "Eg. microsoft.com,ubuntu.co.uk or [\"microsoft.com\",\"ubuntu.co.uk\"] or microsoft.com",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -1107,7 +1088,7 @@
     {
       "title": "Add Inbound Blacklist Hosts",
       "operation": "add_inbound_blacklist_hosts",
-      "description": "Adds one or more hosts to the Netscout AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more hosts to the Netscout AED blocked-list based on the host addresses, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_hosts",
       "output_schema": {
@@ -1126,12 +1107,11 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"] or 8.8.8.8",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Netscout AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the blacklist in Netscout AED.",
+          "description": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to add to the blocked-list in Netscout AED.",
+          "tooltip": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to add to the blocked-list in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -1192,7 +1172,7 @@
     {
       "title": "Get Inbound Blacklisted Hosts",
       "operation": "get_inbound_blacklisted_hosts",
-      "description": "Retrieves all the inbound blacklisted hosts or specific inbound blacklisted hosts based on the input parameters you have specified. To return blacklisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+      "description": "Retrieves all the inbound blocked-list hosts or specific inbound blocked-list hosts based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
       "category": "investigation",
       "annotation": "get_inbound_blacklisted_hosts",
       "output_schema": {
@@ -1210,13 +1190,12 @@
           "title": "Host Address",
           "name": "hostAddress",
           "type": "text",
-          "description": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "List of \u2018,\u2019 delimited IPv4 host addresses or CIDRs that you want to retrieve from the inbound blacklist in Netscout AED.",
+          "description": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to retrieve from the blocked-list in Netscout AED.",
+          "tooltip": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to retrieve from the blocked-list in Netscout AED.",
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"10.10.10.10\",\"8.8.8.8\"]",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Select CID or PGID",
@@ -1268,8 +1247,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED."
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation."
         },
         {
           "title": "Queue",
@@ -1278,9 +1257,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation.",
           "placeholder": "Eg. 8.8.8.8+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation."
         },
         {
           "title": "Response Fields",
@@ -1290,8 +1269,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "Eg. hostAddress,updateTime,cid or hostAddress.",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -1315,33 +1294,31 @@
           "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -1355,7 +1332,7 @@
     {
       "title": "Remove Inbound Blacklisted Hosts",
       "operation": "remove_inbound_blacklisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the host addresses, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_hosts",
       "output_schema": {},
@@ -1369,8 +1346,7 @@
           "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -1421,7 +1397,7 @@
     {
       "title": "Add Inbound Whitelisted Hosts",
       "operation": "add_inbound_whitelisted_hosts",
-      "description": "Adds one or more hosts to the Netscout AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
+      "description": "Adds one or more hosts to the Netscout AED allowed-list based on the host addresses, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_whitelisted_hosts",
       "output_schema": {
@@ -1444,8 +1420,7 @@
           "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -1506,7 +1481,7 @@
     {
       "title": "Get Inbound Whitelisted Hosts",
       "operation": "get_inbound_whitelisted_hosts",
-      "description": "Retrieves all the inbound whitelisted hosts or specific inbound whitelisted hosts based on the input parameters you have specified. By default, all whitelisted hosts are returned. To return whitelisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects hosts that are globally whitelisted.",
+      "description": "Retrieves all the inbound allowed-list hosts or specific inbound allowed-list hosts based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global allowed-list.",
       "category": "investigation",
       "annotation": "get_inbound_whitelisted_hosts",
       "output_schema": {
@@ -1529,8 +1504,7 @@
           "placeholder": "Eg. 10.10.10.10,8.8.8.8 or [\"11.11.11.11\",\"18.18.18.18\"]",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Select CID or PGID",
@@ -1582,8 +1556,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the inbound blacklist in Netscout AED."
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation."
         },
         {
           "title": "Queue",
@@ -1592,9 +1566,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation.",
           "placeholder": "Eg. 8.8.8.8+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation."
         },
         {
           "title": "Response Fields",
@@ -1604,8 +1578,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "Eg. hostAddress,updateTime,cid or hostAddress.",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -1629,33 +1603,31 @@
           "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -1669,7 +1641,7 @@
     {
       "title": "Remove Inbound Whitelisted Hosts",
       "operation": "remove_inbound_whitelisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Netscout AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED allowed-list for a specific protection group or for all protection groups based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global allowed-list.",
       "category": "investigation",
       "annotation": "remove_inbound_whitelisted_hosts",
       "output_schema": {},
@@ -1683,8 +1655,7 @@
           "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the whitelist in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -1735,7 +1706,7 @@
     {
       "title": "Add Inbound Blacklist URLs",
       "operation": "add_inbound_blacklist_urls",
-      "description": "Adds one or more URLs to the Netscout AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Adds one or more URLs to the Netscout AED blocked-list based on the URL and protection group IDs (PGID) or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "add_inbound_blacklist_urls",
       "output_schema": {
@@ -1758,8 +1729,7 @@
           "placeholder": "yahoo.com/mail,google.com/calendar or [\"yahoo.com/mail\",\"google.com/calendar\"] or maps.google.com/maps",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -1820,7 +1790,7 @@
     {
       "title": "Get Inbound Blacklisted URLs",
       "operation": "get_inbound_blacklisted_urls",
-      "description": "Retrieves all the inbound blacklisted URLs or specific inbound blacklisted URLs based on the input parameters you have specified. To return blacklisted URLs for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects URLs that are globally blacklisted.",
+      "description": "Retrieves all the inbound blocked-list URLs or specific inbound blocked-list URLs based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
       "category": "investigation",
       "annotation": "get_inbound_blacklisted_urls",
       "output_schema": {
@@ -1843,8 +1813,7 @@
           "placeholder": "[\"yahoo.com/mail\",\"google.com/calendar\"] or {\"maps.google.com/maps\"]",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Select CID or PGID",
@@ -1896,8 +1865,8 @@
           "required": false,
           "editable": true,
           "type": "datetime",
-          "description": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Netscout AED.",
-          "tooltip": "Last updated or set time for the URLs that you want to retrieve from the inbound blacklist in Netscout AED."
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation."
         },
         {
           "title": "Queue",
@@ -1906,9 +1875,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation.",
           "placeholder": "Eg. maps.google.com/maps+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation."
         },
         {
           "title": "Response Fields",
@@ -1918,8 +1887,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "Eg. url,updateTime,cid or url.",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -1943,33 +1912,31 @@
           "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -1983,7 +1950,7 @@
     {
       "title": "Remove Inbound Blacklisted URLs",
       "operation": "remove_inbound_blacklisted_urls",
-      "description": "Removes one or more URLs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+      "description": "Removes one or more URLs from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the URLs and protection group IDs (PGID) or central configuration IDs (CID) you have specified.",
       "category": "investigation",
       "annotation": "remove_inbound_blacklisted_urls",
       "output_schema": {},
@@ -1997,8 +1964,7 @@
           "placeholder": "yahoo.com/mail,google.com/calendar or [\"yahoo.com/mail\",\"google.com/calendar\"] or maps.google.com/maps",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Select CID or PGID",
@@ -2049,7 +2015,7 @@
     {
       "title": "Add Outbound Blacklist Hosts",
       "operation": "add_outbound_blacklist_hosts",
-      "description": "Adds one or more hosts to the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified.",
+      "description": "Adds one or more hosts to the Netscout AED outbound blocked-list based on the host addresses or CIDRs you have specified.",
       "category": "investigation",
       "annotation": "add_outbound_blacklist_hosts",
       "output_schema": {
@@ -2070,8 +2036,7 @@
           "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound blacklist in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Annotation",
@@ -2089,7 +2054,7 @@
     {
       "title": "Get Outbound Blacklisted Hosts",
       "operation": "get_outbound_blacklisted_hosts",
-      "description": "Retrieves all the outbound blacklisted hosts or specific outbound blacklisted hosts based on the input parameters you have specified.",
+      "description": "Retrieves all the outbound blocked-list hosts or specific outbound blocked-list hosts based on the host addresses, or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
       "category": "investigation",
       "annotation": "get_outbound_blacklisted_hosts",
       "output_schema": {
@@ -2110,15 +2075,14 @@
           "placeholder": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Update Time",
           "name": "updateTime",
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Netscout AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound blacklist in Netscout AED.",
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -2131,9 +2095,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation.",
           "placeholder": "Eg. 8.8.8.8+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation."
         },
         {
           "title": "Response Fields",
@@ -2142,8 +2106,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -2167,33 +2131,31 @@
           "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
           "name": "page",
           "type": "integer",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "description": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
+          "tooltip": "Specify the page number from which results are to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -2207,7 +2169,7 @@
     {
       "title": "Remove Outbound Blacklisted Hosts",
       "operation": "remove_outbound_blacklisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound blocked-list based on the host addresses or CIDRs you have specified.",
       "category": "investigation",
       "annotation": "remove_outbound_blacklisted_hosts",
       "output_schema": {},
@@ -2217,12 +2179,11 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 1.1.1.1,2.2.2.2 or [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Netscout AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound blacklist in Netscout AED.",
+          "description": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to remove from the blocked-list in Netscout AED.",
+          "tooltip": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to remove from the blocked-list in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         }
       ],
       "enabled": true
@@ -2230,7 +2191,7 @@
     {
       "title": "Add Outbound Whitelist Hosts",
       "operation": "add_outbound_whitelisted_hosts",
-      "description": "Adds one or more hosts to the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified.",
+      "description": "Adds one or more hosts to the Netscout AED outbound allowed-list based on the host addresses or CIDRs you have specified.",
       "category": "investigation",
       "annotation": "add_outbound_whitelisted_hosts",
       "output_schema": {
@@ -2247,12 +2208,11 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. [\"1.1.1.1\",\"2.2.2.2\"] or 1.1.1.1,2.2.2.2 or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Netscout AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to add to the outbound whitelist in Netscout AED.",
+          "description": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to add to the allowed-list in Netscout AED.",
+          "tooltip": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to add to the allowed-list in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         },
         {
           "title": "Annotation",
@@ -2270,7 +2230,7 @@
     {
       "title": "Get Outbound Whitelisted Hosts",
       "operation": "get_outbound_whitelisted_hosts",
-      "description": "Retrieves all the outbound whitelisted hosts or specific outbound whitelisted hosts based on the input parameters you have specified.",
+      "description": "Retrieves all the outbound allowed-list hosts or specific outbound allowed-list hosts based on the host addresses, or other filter criteria you have specified. An ID of -1 selects domains that are in the global allowed-list.",
       "category": "investigation",
       "annotation": "get_outbound_whitelisted_hosts",
       "output_schema": {
@@ -2286,20 +2246,19 @@
           "title": "Host Address",
           "name": "hostAddress",
           "type": "text",
-          "description": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Netscout AED.",
-          "tooltip": "List of ',' delimited IPv4 host addresses or CIDRs that you want to retrieve from the outbound whitelist in Netscout AED.",
+          "description": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to retrieve from the allowed-list in Netscout AED.",
+          "tooltip": "Specify one, or multiple comma-separated hosts (IP4 or IPv6) or CIDRs, to retrieve from the allowed-list in Netscout AED.",
           "placeholder": "E.g. [\"1.1.1.1\",\"2.2.2.2\"]",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Update Time",
           "name": "updateTime",
           "type": "datetime",
-          "description": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Netscout AED.",
-          "tooltip": "Last updated or set time for the hosts that you want to retrieve from the outbound whitelist in Netscout AED.",
+          "description": "Specify the last updated or set time to filter results of this operation.",
+          "tooltip": "Specify the last updated or set time to filter results of this operation.",
           "visible": true,
           "editable": true,
           "required": false,
@@ -2312,9 +2271,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation.",
+          "tooltip": "Specify a list of + delimited key values based on which to filter the results of this operation.",
           "placeholder": "Eg. 8.8.8.8+1610553061",
-          "description": "List of \u2018+\u2019 delimited key values based on which you want to filter the results of this operation."
+          "description": "Specify a list of + delimited key values based on which to filter the results of this operation."
         },
         {
           "title": "Response Fields",
@@ -2323,8 +2282,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation.",
-          "description": "List of \u2018,\u2019 delimited keys that you want to include in the results of this operation."
+          "tooltip": "Specify a list of comma-separated keys to include in the results of this operation.",
+          "description": "Specify a list of comma-separated keys to include in the results of this operation."
         },
         {
           "title": "Sort",
@@ -2348,8 +2307,7 @@
           "tooltip": "Direction in which you want to sort the results of this operation. You can choose between Ascending or Descending. Note: This parameter can only be used when the \"Sort\" parameter is specified.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Page Number",
@@ -2359,22 +2317,21 @@
           "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Records Per Page",
           "name": "perPage",
           "type": "integer",
-          "description": "Number of results, per page that this operation should return. By default, this is set to 10.",
-          "tooltip": "Number of results, per page that this operation should return. By default, this is set to 10.",
+          "description": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
+          "tooltip": "Specify the number of results per page that this operation should return. By default, this is set to 10.",
           "visible": true,
           "editable": true,
-          "required": false,
-          "value": ""
+          "required": false
         },
         {
           "title": "Other Fields",
+          "tooltip": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "description": "Other fields that you want to use to filter results returned by this operation. You can find these fields in Endpoints API Documentation on your AED setup.",
           "required": false,
           "editable": true,
@@ -2388,7 +2345,7 @@
     {
       "title": "Remove Outbound Whitelisted Hosts",
       "operation": "remove_outbound_whitelisted_hosts",
-      "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
+      "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound allowed-list based on the host addresses or CIDRs you have specified.",
       "category": "investigation",
       "annotation": "remove_outbound_whitelisted_hosts",
       "output_schema": {},
@@ -2398,12 +2355,11 @@
           "name": "hostAddress",
           "type": "text",
           "placeholder": "Eg. 1.1.1.1,2.2.2.2 or 1.1.1.1",
-          "description": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Netscout AED.",
-          "tooltip": "A single IPv4 or IPv6 host address or CIDR or a comma-separated list of host addresses or CIDRs that you want to remove from the outbound whitelist in Netscout AED.",
+          "description": "Specify a URL or a comma-separated list of URLs to remove from the blocked-list in Netscout AED.",
+          "tooltip": "Specify a URL or a comma-separated list of URLs to remove from the blocked-list in Netscout AED.",
           "visible": true,
           "editable": true,
-          "required": true,
-          "value": ""
+          "required": true
         }
       ],
       "enabled": true
