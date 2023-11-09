@@ -2,10 +2,10 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+      "uuid": "97d7d09f-518e-4aa3-9626-ca1a858249c9",
       "@type": "WorkflowCollection",
       "name": "Sample - Netscout AED - 1.0.0",
-      "description": "Netscout AED is an inline security appliance deployed at the network perimeter (i.e. between router and firewall) that can automatically detect and block inbound threats (e.g. DDoS attacks, malware) and outbound malicious communication (i.e. C2, bad URLs) using unique, curated, ATLAS threat intelligence.",
+      "description": "Netscout Arbor Edge Defense (AED) secures the internet data center edge from threats against availability \u2014 specifically from application-layer, distributed denial of service (DDoS) attacks.",
       "visible": true,
       "image": null,
       "recordTags": [
@@ -15,10 +15,10 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "2812ec47-c417-4bce-8565-70862f926b6f",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "a8307eb3-1a40-47d8-9334-ab28bd1f2ea2",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves the Netscout AED country codes and names based on the input parameters you have specified.",
+          "description": "Retrieves the Netscout AED country codes and names based on the country names and other filter criteria you have specified.",
           "name": "Get Countries",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -30,16 +30,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b4c049ef-0acc-45b8-9e37-7abb97a23f14",
+          "triggerStep": "/api/3/workflow_steps/34c57fa0-80d8-4259-985b-43960a28865d",
           "steps": [
             {
-              "uuid": "b4c049ef-0acc-45b8-9e37-7abb97a23f14",
+              "uuid": "34c57fa0-80d8-4259-985b-43960a28865d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "f094e24f-9f80-4d30-9985-6624ab533828",
+                "route": "8567931c-a992-4af9-8b6e-571507fb8541",
                 "title": "Netscout AED: Get Countries",
                 "resources": [
                   "alerts"
@@ -59,7 +59,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "90838d93-7e0d-4b1a-a58a-fb1a8836adb9",
+              "uuid": "1f2303a8-c4a1-4865-b159-f771b172116d",
               "@type": "WorkflowStep",
               "name": "Get Countries",
               "description": null,
@@ -84,19 +84,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "ab5a74f8-241c-46e5-8e3c-8405c258161c",
+              "uuid": "8d4f1d8f-743a-4284-a8d1-d8d5c85087e3",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Countries",
-              "sourceStep": "/api/3/workflow_steps/b4c049ef-0acc-45b8-9e37-7abb97a23f14",
-              "targetStep": "/api/3/workflow_steps/90838d93-7e0d-4b1a-a58a-fb1a8836adb9"
+              "sourceStep": "/api/3/workflow_steps/34c57fa0-80d8-4259-985b-43960a28865d",
+              "targetStep": "/api/3/workflow_steps/1f2303a8-c4a1-4865-b159-f771b172116d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "75af4761-b25e-4aa0-839d-b9f13f1cc753",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "9f04b609-a979-461b-8830-b072db2b5c95",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
           "description": "Creates an Netscout AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
           "name": "Create Inbound Protection Groups",
@@ -110,16 +110,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2b4a4708-0437-4fc9-bf1d-223c0eaf5f21",
+          "triggerStep": "/api/3/workflow_steps/e3753cff-0051-4147-9977-0eda0bde4d2d",
           "steps": [
             {
-              "uuid": "2b4a4708-0437-4fc9-bf1d-223c0eaf5f21",
+              "uuid": "e3753cff-0051-4147-9977-0eda0bde4d2d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "2e25a36c-ebd7-4ad4-9228-ff88dcb4d8a6",
+                "route": "f4a2d6b3-fc81-4b48-a171-7af72f5b4316",
                 "title": "Netscout AED: Create Inbound Protection Groups",
                 "resources": [
                   "alerts"
@@ -139,7 +139,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "d2d6df5f-9afa-49cb-a95c-90f8a4085509",
+              "uuid": "3ba5b684-4d24-4730-a28f-e5af86895aa5",
               "@type": "WorkflowStep",
               "name": "Create Inbound Protection Groups",
               "description": null,
@@ -148,9 +148,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "prefixes": "",
-                  "serverType": "",
-                  "description": "",
                   "active": true,
                   "protectionLevel": "Low"
                 },
@@ -170,21 +167,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "2b586ab4-105f-49e1-b990-189a3aa7c2ea",
+              "uuid": "98d2bbdf-539e-4bcd-aa6b-a3eb2f047621",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Inbound Protection Groups",
-              "sourceStep": "/api/3/workflow_steps/2b4a4708-0437-4fc9-bf1d-223c0eaf5f21",
-              "targetStep": "/api/3/workflow_steps/d2d6df5f-9afa-49cb-a95c-90f8a4085509"
+              "sourceStep": "/api/3/workflow_steps/e3753cff-0051-4147-9977-0eda0bde4d2d",
+              "targetStep": "/api/3/workflow_steps/3ba5b684-4d24-4730-a28f-e5af86895aa5"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "adcb7750-7a74-4af9-b425-da4c99fd1e54",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "3b688eeb-8701-49d7-98dc-a05958df8d2e",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Netscout AED protection groups based on the input parameters you have specified.",
+          "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Netscout AED protection groups based on the protection group identifier, name, and other filter criteria you have specified.",
           "name": "Get Inbound Protection Groups",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -196,16 +193,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c5e80004-032d-45d2-bed8-2b10d3419362",
+          "triggerStep": "/api/3/workflow_steps/b393cdfa-7665-465e-b3c9-9b0fb653f62d",
           "steps": [
             {
-              "uuid": "c5e80004-032d-45d2-bed8-2b10d3419362",
+              "uuid": "b393cdfa-7665-465e-b3c9-9b0fb653f62d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "e776da03-993d-438e-b48d-4776b85df316",
+                "route": "e3abf34c-52d9-4430-88c6-08433d319b31",
                 "title": "Netscout AED: Get Inbound Protection Groups",
                 "resources": [
                   "alerts"
@@ -225,7 +222,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "a2b6e2e2-f833-441b-bd2e-e8e21a4df294",
+              "uuid": "ed40f010-f7e0-4bd6-9935-b5fa57626f76",
               "@type": "WorkflowStep",
               "name": "Get Inbound Protection Groups",
               "description": null,
@@ -233,15 +230,7 @@
               "arguments": {
                 "name": "Netscout AED",
                 "config": "''",
-                "params": {
-                  "pgid": "",
-                  "name": "",
-                  "description": "",
-                  "protectionLevel": "",
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
-                },
+                "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
                 "operation": "get_inbound_protection_groups",
@@ -258,19 +247,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "609f4cbf-4d88-460d-9e31-ce1494808ac1",
+              "uuid": "987ed9ab-5d34-4bdc-a1fd-874aea48699c",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Inbound Protection Groups",
-              "sourceStep": "/api/3/workflow_steps/c5e80004-032d-45d2-bed8-2b10d3419362",
-              "targetStep": "/api/3/workflow_steps/a2b6e2e2-f833-441b-bd2e-e8e21a4df294"
+              "sourceStep": "/api/3/workflow_steps/b393cdfa-7665-465e-b3c9-9b0fb653f62d",
+              "targetStep": "/api/3/workflow_steps/ed40f010-f7e0-4bd6-9935-b5fa57626f76"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "fd64c614-dd32-490b-85bf-4b2b2bec523b",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "05cf7d3c-fd3c-4a9f-a92d-c49d8760a659",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
           "description": "Modifies the mode or the protection level for specific inbound protection groups based on the protection group IDs you have specified.",
           "name": "Update Inbound Protection Groups",
@@ -284,16 +273,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/463926b9-bfa7-4ebf-8616-50d8293b5c1e",
+          "triggerStep": "/api/3/workflow_steps/71fdbc27-32c3-4023-8cb6-d0bddce9726a",
           "steps": [
             {
-              "uuid": "463926b9-bfa7-4ebf-8616-50d8293b5c1e",
+              "uuid": "71fdbc27-32c3-4023-8cb6-d0bddce9726a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a796a384-e2df-4890-bd1f-b85c0f445681",
+                "route": "ac1c62eb-6a12-4f5f-84c1-b237e5431a9f",
                 "title": "Netscout AED: Update Inbound Protection Groups",
                 "resources": [
                   "alerts"
@@ -313,7 +302,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "b10bb682-f1b7-4910-9fcd-3a6560048af3",
+              "uuid": "89306d3f-c33c-45a2-9246-09c2bbea7741",
               "@type": "WorkflowStep",
               "name": "Update Inbound Protection Groups",
               "description": null,
@@ -321,9 +310,7 @@
               "arguments": {
                 "name": "Netscout AED",
                 "config": "''",
-                "params": {
-                  "pgid": ""
-                },
+                "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
                 "operation": "update_inbound_protection_groups",
@@ -340,21 +327,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "06fae0f0-4f18-4e19-b022-849d0dec5678",
+              "uuid": "0a1471ca-0d06-491d-a367-1eefed19a5e1",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update Inbound Protection Groups",
-              "sourceStep": "/api/3/workflow_steps/463926b9-bfa7-4ebf-8616-50d8293b5c1e",
-              "targetStep": "/api/3/workflow_steps/b10bb682-f1b7-4910-9fcd-3a6560048af3"
+              "sourceStep": "/api/3/workflow_steps/71fdbc27-32c3-4023-8cb6-d0bddce9726a",
+              "targetStep": "/api/3/workflow_steps/89306d3f-c33c-45a2-9246-09c2bbea7741"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "0e77da77-8cb8-4091-8062-c05249509ef9",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "25091bd6-962c-4354-a369-4a080bb629f3",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more countries to the Netscout AED blacklist based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more countries to the Netscout AED blocked-list based on the country codes and protection group IDs (PGID) or central configuration IDs (CID) you have specified.",
           "name": "Add Inbound Blacklist Countries",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -366,16 +353,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d28e0f9a-70b0-471d-8b3b-f4a3e98aca09",
+          "triggerStep": "/api/3/workflow_steps/ae1cb8d1-a4d9-4a11-8de3-7b491e230426",
           "steps": [
             {
-              "uuid": "d28e0f9a-70b0-471d-8b3b-f4a3e98aca09",
+              "uuid": "ae1cb8d1-a4d9-4a11-8de3-7b491e230426",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4e9fe5d7-a1be-4135-8065-a0b35f230d56",
+                "route": "529d27e1-fc91-4359-be1c-20d8a26e5731",
                 "title": "Netscout AED: Add Inbound Blacklist Countries",
                 "resources": [
                   "alerts"
@@ -395,7 +382,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "33615b3b-8fd1-402f-bfc3-9dbe99e2f14f",
+              "uuid": "ab864486-8fb9-47dc-b050-906c8c0563c8",
               "@type": "WorkflowStep",
               "name": "Add Inbound Blacklist Countries",
               "description": null,
@@ -404,7 +391,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "country": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -423,21 +409,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a7abe737-dada-4004-a321-abcabc18a9ce",
+              "uuid": "90e6704a-c217-4afb-9843-37cf9b359dd6",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Inbound Blacklist Countries",
-              "sourceStep": "/api/3/workflow_steps/d28e0f9a-70b0-471d-8b3b-f4a3e98aca09",
-              "targetStep": "/api/3/workflow_steps/33615b3b-8fd1-402f-bfc3-9dbe99e2f14f"
+              "sourceStep": "/api/3/workflow_steps/ae1cb8d1-a4d9-4a11-8de3-7b491e230426",
+              "targetStep": "/api/3/workflow_steps/ab864486-8fb9-47dc-b050-906c8c0563c8"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "39a7eed9-29bd-43da-bf00-41dd8e6f7514",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "b43471cd-7725-4867-8b37-954537b027ac",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the inbound blacklisted countries or specific inbound blacklisted countries based on the input parameters you have specified. By default, 10 blacklisted countries are returned. To return blacklisted countries for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects countries that are globally blacklisted.",
+          "description": "Retrieves all the inbound blocked-list countries or specific inbound blocked-list countries based on the country codes, protection group IDs, central configuration IDs, or other filter criteria you have specified. By default, 10 blocked-list countries are returned. An ID of -1 selects countries that are in the global blocked-list.",
           "name": "Get Inbound Blacklisted Countries",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -449,16 +435,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/48484c53-2a43-4336-b775-a80bd7938bf7",
+          "triggerStep": "/api/3/workflow_steps/47d3cb73-c213-437f-850a-5bd9a828dc96",
           "steps": [
             {
-              "uuid": "48484c53-2a43-4336-b775-a80bd7938bf7",
+              "uuid": "47d3cb73-c213-437f-850a-5bd9a828dc96",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "be84c4c7-9237-4625-9663-e825fc7d46a3",
+                "route": "315d9a5a-bbba-4c72-bfb0-12f99498cdb4",
                 "title": "Netscout AED: Get Inbound Blacklisted Countries",
                 "resources": [
                   "alerts"
@@ -478,7 +464,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c81eb894-a573-4fe1-b0fe-b77a62fe7a88",
+              "uuid": "eeaaa4f2-f1b3-4072-83e4-fddea6b8c336",
               "@type": "WorkflowStep",
               "name": "Get Inbound Blacklisted Countries",
               "description": null,
@@ -487,11 +473,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "country": "",
-                  "cid_pgid": "Protection Group ID",
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -509,21 +491,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "0d6fb1ab-a9e0-431d-b317-c8933fec9330",
+              "uuid": "c2b6a955-94f8-412c-a93f-e1f86dafa44a",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Inbound Blacklisted Countries",
-              "sourceStep": "/api/3/workflow_steps/48484c53-2a43-4336-b775-a80bd7938bf7",
-              "targetStep": "/api/3/workflow_steps/c81eb894-a573-4fe1-b0fe-b77a62fe7a88"
+              "sourceStep": "/api/3/workflow_steps/47d3cb73-c213-437f-850a-5bd9a828dc96",
+              "targetStep": "/api/3/workflow_steps/eeaaa4f2-f1b3-4072-83e4-fddea6b8c336"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "888bae06-b843-4716-8cf0-38c68f986980",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "39828950-c77a-409f-adf6-12cec3287ccc",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more countries from the Netscout AED blacklist for a specific protection group or for all protection groups based on the country codes and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+          "description": "Removes one or more countries from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the country codes, protection group IDs, central configuration IDs, or other filter criteria you have specified.",
           "name": "Remove Inbound Blacklisted Countries",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -535,16 +517,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/af25a83e-2a71-4489-8ae3-9d52d600af9c",
+          "triggerStep": "/api/3/workflow_steps/fb4bb79a-02fd-4be0-9e12-4937715e4ba2",
           "steps": [
             {
-              "uuid": "af25a83e-2a71-4489-8ae3-9d52d600af9c",
+              "uuid": "fb4bb79a-02fd-4be0-9e12-4937715e4ba2",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "e2f3da95-e432-48a9-8878-07c46ca0f8f3",
+                "route": "67d3c97c-6352-4be2-9c64-3cf34e572e82",
                 "title": "Netscout AED: Remove Inbound Blacklisted Countries",
                 "resources": [
                   "alerts"
@@ -564,7 +546,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "b2748680-db39-413e-82c3-92bdfa175ae9",
+              "uuid": "2e6fff5c-4b01-46be-bb1c-4fea1e42d800",
               "@type": "WorkflowStep",
               "name": "Remove Inbound Blacklisted Countries",
               "description": null,
@@ -573,7 +555,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "country": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -592,21 +573,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "15f29119-da3e-4089-a184-00f80b2783d0",
+              "uuid": "5d9e1c6f-3121-418d-9f93-97a50163418d",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Inbound Blacklisted Countries",
-              "sourceStep": "/api/3/workflow_steps/af25a83e-2a71-4489-8ae3-9d52d600af9c",
-              "targetStep": "/api/3/workflow_steps/b2748680-db39-413e-82c3-92bdfa175ae9"
+              "sourceStep": "/api/3/workflow_steps/fb4bb79a-02fd-4be0-9e12-4937715e4ba2",
+              "targetStep": "/api/3/workflow_steps/2e6fff5c-4b01-46be-bb1c-4fea1e42d800"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ff9058ed-b9c0-4971-9feb-8a18149966f4",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "fe6ed244-7a7a-4bc6-ba98-b6de735fb8fe",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more domains to the Netscout AED blacklist based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more domains to the Netscout AED blocked-list based on the domain names, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
           "name": "Add Inbound Blacklist Domains",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -618,16 +599,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2b3879fb-56e8-4cbd-8049-dbab36bd075c",
+          "triggerStep": "/api/3/workflow_steps/0455566b-697a-4900-a402-802089701921",
           "steps": [
             {
-              "uuid": "2b3879fb-56e8-4cbd-8049-dbab36bd075c",
+              "uuid": "0455566b-697a-4900-a402-802089701921",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a649fb56-7243-43c9-b9a6-6bbc6be749f5",
+                "route": "fd336aa3-4961-4124-89df-5c1157876c41",
                 "title": "Netscout AED: Add Inbound Blacklist Domains",
                 "resources": [
                   "alerts"
@@ -647,7 +628,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e74a8a9c-01e6-447e-b968-1406762cef3c",
+              "uuid": "b4628078-b41f-43e0-a737-fb61ed1f0774",
               "@type": "WorkflowStep",
               "name": "Add Inbound Blacklist Domains",
               "description": null,
@@ -656,7 +637,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "domain": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -675,21 +655,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "50aec8c5-b314-4273-bb18-a1aac2b46c00",
+              "uuid": "c9fb1c96-c014-4639-bceb-872a88b51025",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Inbound Blacklist Domains",
-              "sourceStep": "/api/3/workflow_steps/2b3879fb-56e8-4cbd-8049-dbab36bd075c",
-              "targetStep": "/api/3/workflow_steps/e74a8a9c-01e6-447e-b968-1406762cef3c"
+              "sourceStep": "/api/3/workflow_steps/0455566b-697a-4900-a402-802089701921",
+              "targetStep": "/api/3/workflow_steps/b4628078-b41f-43e0-a737-fb61ed1f0774"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "7db99c52-af61-4c7d-8d75-a9034ff26c38",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "e2304b29-583e-4ca9-a192-67217a490834",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the inbound blacklisted domains or specific inbound blacklisted domains based on the input parameters you have specified. To return blacklisted domains for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+          "description": "Retrieves all the inbound blocked-list domains or specific inbound blocked-list domains based on the domain names, protection group IDs, central configuration IDs, or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
           "name": "Get Inbound Blacklisted Domains",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -701,16 +681,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/612c260a-b80d-4a04-9b9f-eeaad1a41319",
+          "triggerStep": "/api/3/workflow_steps/7a407a81-b2c0-4b00-96d9-f7128c261c22",
           "steps": [
             {
-              "uuid": "612c260a-b80d-4a04-9b9f-eeaad1a41319",
+              "uuid": "7a407a81-b2c0-4b00-96d9-f7128c261c22",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "cb46402c-5bea-402f-8b90-ae731e4539cc",
+                "route": "0f129ad5-d3a5-4591-a7b4-980fcda726f4",
                 "title": "Netscout AED: Get Inbound Blacklisted Domains",
                 "resources": [
                   "alerts"
@@ -730,7 +710,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "ef1a2456-b5a2-4d77-9f48-88e4fcd768cd",
+              "uuid": "79749a85-b2b6-46b8-a977-c8701d30f8ef",
               "@type": "WorkflowStep",
               "name": "Get Inbound Blacklisted Domains",
               "description": null,
@@ -739,11 +719,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "domain": "",
-                  "cid_pgid": "Protection Group ID",
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -761,21 +737,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "8c0d4634-daa2-4e2d-b088-7bef780770a6",
+              "uuid": "91a105b7-f813-4a55-a3a3-cd7716d5d2a1",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Inbound Blacklisted Domains",
-              "sourceStep": "/api/3/workflow_steps/612c260a-b80d-4a04-9b9f-eeaad1a41319",
-              "targetStep": "/api/3/workflow_steps/ef1a2456-b5a2-4d77-9f48-88e4fcd768cd"
+              "sourceStep": "/api/3/workflow_steps/7a407a81-b2c0-4b00-96d9-f7128c261c22",
+              "targetStep": "/api/3/workflow_steps/79749a85-b2b6-46b8-a977-c8701d30f8ef"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "aea0ea7e-0f21-4843-bfb5-4f9905e723a3",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "b38539fa-c641-4bd4-a973-a01153faa709",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more domains from the Netscout AED blacklist for a specific protection group or for all protection groups based on the domain names and protection group IDs (pgid) or central configuration IDs (cid) you have specified. ",
+          "description": "Removes one or more domains from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the domain names, protection group IDs, or central configuration IDs (CID) you have specified.",
           "name": "Remove Inbound Blacklisted Domains",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -787,16 +763,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/817a00f2-1236-4a0b-881c-d501047b5f3b",
+          "triggerStep": "/api/3/workflow_steps/0e7c5fda-3772-418a-adc8-e3439d2fd7b9",
           "steps": [
             {
-              "uuid": "817a00f2-1236-4a0b-881c-d501047b5f3b",
+              "uuid": "0e7c5fda-3772-418a-adc8-e3439d2fd7b9",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "770f6fbf-b6ee-497d-94a6-dedaafc2131a",
+                "route": "05171eeb-6d85-4f00-a0ee-a3d8a59fe556",
                 "title": "Netscout AED: Remove Inbound Blacklisted Domains",
                 "resources": [
                   "alerts"
@@ -816,7 +792,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "f6126106-3bcb-4b8e-8969-4ecfdc5daf5f",
+              "uuid": "4c6f418d-8c9e-4e2a-b2e9-0bba337980f2",
               "@type": "WorkflowStep",
               "name": "Remove Inbound Blacklisted Domains",
               "description": null,
@@ -825,7 +801,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "domain": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -844,21 +819,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1456cf5a-433b-4b3c-9c76-130b12697166",
+              "uuid": "65f90a6d-8156-4af4-8a3b-c99aae805c34",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Inbound Blacklisted Domains",
-              "sourceStep": "/api/3/workflow_steps/817a00f2-1236-4a0b-881c-d501047b5f3b",
-              "targetStep": "/api/3/workflow_steps/f6126106-3bcb-4b8e-8969-4ecfdc5daf5f"
+              "sourceStep": "/api/3/workflow_steps/0e7c5fda-3772-418a-adc8-e3439d2fd7b9",
+              "targetStep": "/api/3/workflow_steps/4c6f418d-8c9e-4e2a-b2e9-0bba337980f2"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2944889d-197d-4d1f-99aa-eddf2f5b8af8",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "68284b68-f8b2-4f5e-bdbe-c79cbd5b1834",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Netscout AED blacklist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more hosts to the Netscout AED blocked-list based on the host addresses, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
           "name": "Add Inbound Blacklist Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -870,16 +845,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c18cb4c1-6a9c-461d-9cef-78a928785062",
+          "triggerStep": "/api/3/workflow_steps/fddcd327-ff4f-4d99-a1d5-2ec4eb003dd9",
           "steps": [
             {
-              "uuid": "c18cb4c1-6a9c-461d-9cef-78a928785062",
+              "uuid": "fddcd327-ff4f-4d99-a1d5-2ec4eb003dd9",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "0e9646db-1794-4cd8-92ff-c62bfd02153f",
+                "route": "8aec04ca-b74e-492c-bbed-823a2be29a5e",
                 "title": "Netscout AED: Add Inbound Blacklist Hosts",
                 "resources": [
                   "alerts"
@@ -899,7 +874,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5e5247cc-7851-4766-9fc0-e57a9487af68",
+              "uuid": "38851ad7-2774-4138-abd6-0bb1bc12eeba",
               "@type": "WorkflowStep",
               "name": "Add Inbound Blacklist Hosts",
               "description": null,
@@ -908,7 +883,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -927,21 +901,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "acc40ba7-6171-41f8-a87c-6fa78062a109",
+              "uuid": "e8be7c50-8ad1-481b-8e62-e98963c77c7e",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Inbound Blacklist Hosts",
-              "sourceStep": "/api/3/workflow_steps/c18cb4c1-6a9c-461d-9cef-78a928785062",
-              "targetStep": "/api/3/workflow_steps/5e5247cc-7851-4766-9fc0-e57a9487af68"
+              "sourceStep": "/api/3/workflow_steps/fddcd327-ff4f-4d99-a1d5-2ec4eb003dd9",
+              "targetStep": "/api/3/workflow_steps/38851ad7-2774-4138-abd6-0bb1bc12eeba"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "99b52937-790e-4bca-ba93-b5b6c4eb8112",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "0e9e5dae-17e8-4e26-8e13-f937f92c5722",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the inbound blacklisted hosts or specific inbound blacklisted hosts based on the input parameters you have specified. To return blacklisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects domains that are globally blacklisted.",
+          "description": "Retrieves all the inbound blocked-list hosts or specific inbound blocked-list hosts based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
           "name": "Get Inbound Blacklisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -953,16 +927,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/db0b749f-b274-450c-b84f-0f5fe93fed8b",
+          "triggerStep": "/api/3/workflow_steps/25cda6d0-43f2-4ce1-ad64-790f709cf959",
           "steps": [
             {
-              "uuid": "db0b749f-b274-450c-b84f-0f5fe93fed8b",
+              "uuid": "25cda6d0-43f2-4ce1-ad64-790f709cf959",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "216f3b78-0e51-49dd-bd0e-fbc78c405759",
+                "route": "704a66f2-c27c-4fbc-b82e-075fca926250",
                 "title": "Netscout AED: Get Inbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
@@ -982,7 +956,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5240935c-9105-4647-b35f-373a7e7f65ab",
+              "uuid": "c6b1719d-6a0d-47dd-b6f4-f088aa8e78f8",
               "@type": "WorkflowStep",
               "name": "Get Inbound Blacklisted Hosts",
               "description": null,
@@ -991,11 +965,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
-                  "cid_pgid": "Protection Group ID",
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -1013,21 +983,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "6fd72370-25a0-4ad6-a7ec-de618b4d74fe",
+              "uuid": "9230828c-2d1b-4b60-b186-f1d5efb43697",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Inbound Blacklisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/db0b749f-b274-450c-b84f-0f5fe93fed8b",
-              "targetStep": "/api/3/workflow_steps/5240935c-9105-4647-b35f-373a7e7f65ab"
+              "sourceStep": "/api/3/workflow_steps/25cda6d0-43f2-4ce1-ad64-790f709cf959",
+              "targetStep": "/api/3/workflow_steps/c6b1719d-6a0d-47dd-b6f4-f088aa8e78f8"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f69570fb-7d93-4064-bb72-83e8fafa713c",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "bced114e-6784-4a7e-b9c3-cb1595e29a74",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the host addresses, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
           "name": "Remove Inbound Blacklisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1039,16 +1009,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/72a9b831-d87b-4c40-8fba-6daa78f5bb9f",
+          "triggerStep": "/api/3/workflow_steps/436807b1-827e-4f07-9d78-9e6eddd7018d",
           "steps": [
             {
-              "uuid": "72a9b831-d87b-4c40-8fba-6daa78f5bb9f",
+              "uuid": "436807b1-827e-4f07-9d78-9e6eddd7018d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "8c660019-07d7-459c-8272-3e766ef9c358",
+                "route": "534f9bff-e2ee-49da-9351-6728532ea13f",
                 "title": "Netscout AED: Remove Inbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
@@ -1068,7 +1038,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "2884d4ac-e2d8-4c4d-8591-72a10bd892f4",
+              "uuid": "56f1ff84-8196-45b2-870a-d90fc764754f",
               "@type": "WorkflowStep",
               "name": "Remove Inbound Blacklisted Hosts",
               "description": null,
@@ -1077,7 +1047,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -1096,21 +1065,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "aff6b79c-9a7f-4bf1-9d50-250b7393a4b8",
+              "uuid": "257d861d-0fab-4393-b73b-86b4ce4d33ce",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Inbound Blacklisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/72a9b831-d87b-4c40-8fba-6daa78f5bb9f",
-              "targetStep": "/api/3/workflow_steps/2884d4ac-e2d8-4c4d-8591-72a10bd892f4"
+              "sourceStep": "/api/3/workflow_steps/436807b1-827e-4f07-9d78-9e6eddd7018d",
+              "targetStep": "/api/3/workflow_steps/56f1ff84-8196-45b2-870a-d90fc764754f"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ed501fa5-b1fa-4fee-874d-51adcaf5f9ee",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "1e316a3c-8be0-4b8f-8717-d517a8e2d904",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Netscout AED whitelist based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid).",
+          "description": "Adds one or more hosts to the Netscout AED allowed-list based on the host addresses, protection group IDs (PGID), or central configuration IDs (CID) you have specified.",
           "name": "Add Inbound Whitelisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1122,16 +1091,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8a817467-363c-440d-9a0d-12d46e8183e8",
+          "triggerStep": "/api/3/workflow_steps/1991cb1e-e173-48ca-98b3-298f11450662",
           "steps": [
             {
-              "uuid": "8a817467-363c-440d-9a0d-12d46e8183e8",
+              "uuid": "1991cb1e-e173-48ca-98b3-298f11450662",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "02098eee-3559-4836-81fb-9e59549e655b",
+                "route": "45140b12-0c8e-43d6-b0ba-485e80b6cf06",
                 "title": "Netscout AED: Add Inbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
@@ -1151,7 +1120,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c41ebcf6-be34-40e2-89a8-f952befa8044",
+              "uuid": "b820aba0-9f2a-48d9-8110-ed8afd408385",
               "@type": "WorkflowStep",
               "name": "Add Inbound Whitelisted Hosts",
               "description": null,
@@ -1160,7 +1129,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -1179,21 +1147,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a3ffdf19-7973-469e-aad9-383983f6e6b5",
+              "uuid": "561646bc-c174-47e9-9c49-cce2135aeef7",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Inbound Whitelisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/8a817467-363c-440d-9a0d-12d46e8183e8",
-              "targetStep": "/api/3/workflow_steps/c41ebcf6-be34-40e2-89a8-f952befa8044"
+              "sourceStep": "/api/3/workflow_steps/1991cb1e-e173-48ca-98b3-298f11450662",
+              "targetStep": "/api/3/workflow_steps/b820aba0-9f2a-48d9-8110-ed8afd408385"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2f6ebf96-78cf-4561-bae8-5a1806a0e0c4",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "9dce49c9-da91-4e7c-8d5e-7bf0f6f0a861",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the inbound whitelisted hosts or specific inbound whitelisted hosts based on the input parameters you have specified. By default, all whitelisted hosts are returned. To return whitelisted hosts for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects hosts that are globally whitelisted.",
+          "description": "Retrieves all the inbound allowed-list hosts or specific inbound allowed-list hosts based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global allowed-list.",
           "name": "Get Inbound Whitelisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1205,16 +1173,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8a77e73b-1018-420e-bdd0-ca60789440d2",
+          "triggerStep": "/api/3/workflow_steps/21be5700-b904-4dc9-a38d-8bc1653b5cb6",
           "steps": [
             {
-              "uuid": "8a77e73b-1018-420e-bdd0-ca60789440d2",
+              "uuid": "21be5700-b904-4dc9-a38d-8bc1653b5cb6",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "dc44cac9-e702-4232-ac06-da9b6a0b968b",
+                "route": "13ed1ea8-86c8-4bda-8998-8fd1a90b62ff",
                 "title": "Netscout AED: Get Inbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
@@ -1234,7 +1202,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c023a6bc-bc40-4408-9aa9-17276339ecf4",
+              "uuid": "7bebc0ab-e9df-4e69-b6bf-802b11635192",
               "@type": "WorkflowStep",
               "name": "Get Inbound Whitelisted Hosts",
               "description": null,
@@ -1243,11 +1211,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
-                  "cid_pgid": "Protection Group ID",
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -1265,21 +1229,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e962453d-dfaa-445d-97a2-7e7f9a5a6e12",
+              "uuid": "39341c93-02a2-4e1d-b60e-be32861b601a",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Inbound Whitelisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/8a77e73b-1018-420e-bdd0-ca60789440d2",
-              "targetStep": "/api/3/workflow_steps/c023a6bc-bc40-4408-9aa9-17276339ecf4"
+              "sourceStep": "/api/3/workflow_steps/21be5700-b904-4dc9-a38d-8bc1653b5cb6",
+              "targetStep": "/api/3/workflow_steps/7bebc0ab-e9df-4e69-b6bf-802b11635192"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "57570cb1-9eee-47e2-b4ef-6f9d872ce935",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "65c47430-c35f-48e2-bca2-c14ec8cb53e5",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Netscout AED whitelist for a specific protection group or for all protection groups based on the host addresses or CIDRs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED allowed-list for a specific protection group or for all protection groups based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global allowed-list.",
           "name": "Remove Inbound Whitelisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1291,16 +1255,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/35029964-0d95-48cb-bd1b-304a02f3a7a8",
+          "triggerStep": "/api/3/workflow_steps/6feb6a79-89c9-4733-90ec-0f0e04d9afa3",
           "steps": [
             {
-              "uuid": "35029964-0d95-48cb-bd1b-304a02f3a7a8",
+              "uuid": "6feb6a79-89c9-4733-90ec-0f0e04d9afa3",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "e54c2248-8eec-46b8-8929-15a9a89dfe8b",
+                "route": "43660fa7-c780-4b77-8149-7dfdf530e744",
                 "title": "Netscout AED: Remove Inbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
@@ -1320,7 +1284,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "1ee2a8c1-ca16-40dc-b3e6-71422749c39c",
+              "uuid": "e4b3cad6-9cc5-49af-8845-85f1387f1d52",
               "@type": "WorkflowStep",
               "name": "Remove Inbound Whitelisted Hosts",
               "description": null,
@@ -1329,7 +1293,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -1348,21 +1311,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "798b8603-7075-48e4-ade9-b70108db9dda",
+              "uuid": "5a9db116-b427-474f-a4ec-600e38d996a5",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Inbound Whitelisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/35029964-0d95-48cb-bd1b-304a02f3a7a8",
-              "targetStep": "/api/3/workflow_steps/1ee2a8c1-ca16-40dc-b3e6-71422749c39c"
+              "sourceStep": "/api/3/workflow_steps/6feb6a79-89c9-4733-90ec-0f0e04d9afa3",
+              "targetStep": "/api/3/workflow_steps/e4b3cad6-9cc5-49af-8845-85f1387f1d52"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "161e6bdf-d48c-4acc-a232-41222a0d93e6",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "49ad3410-4fbb-4558-a97f-72e6bda8f361",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more URLs to the Netscout AED blacklist based on the URL and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Adds one or more URLs to the Netscout AED blocked-list based on the URL and protection group IDs (PGID) or central configuration IDs (CID) you have specified.",
           "name": "Add Inbound Blacklist URLs",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1374,16 +1337,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/f6bd0bd3-d4ea-4e07-931e-387339939eaf",
+          "triggerStep": "/api/3/workflow_steps/7073005c-0a7f-438c-953c-517e577fab5e",
           "steps": [
             {
-              "uuid": "f6bd0bd3-d4ea-4e07-931e-387339939eaf",
+              "uuid": "7073005c-0a7f-438c-953c-517e577fab5e",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "3a738987-81df-4e73-9a41-e375d1b2f363",
+                "route": "5eb0adda-2544-493d-8073-7deeda39b58a",
                 "title": "Netscout AED: Add Inbound Blacklist URLs",
                 "resources": [
                   "alerts"
@@ -1403,7 +1366,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "31a134a2-2a97-4761-ad27-68fd34f016c0",
+              "uuid": "312ab31f-8881-4d43-81cc-8b60e9b9b643",
               "@type": "WorkflowStep",
               "name": "Add Inbound Blacklist URLs",
               "description": null,
@@ -1412,7 +1375,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "url": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -1431,21 +1393,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "221fd816-a914-4efe-a433-947c4dbad41e",
+              "uuid": "00a03ef7-d741-4262-a448-7f4b00898391",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Inbound Blacklist URLs",
-              "sourceStep": "/api/3/workflow_steps/f6bd0bd3-d4ea-4e07-931e-387339939eaf",
-              "targetStep": "/api/3/workflow_steps/31a134a2-2a97-4761-ad27-68fd34f016c0"
+              "sourceStep": "/api/3/workflow_steps/7073005c-0a7f-438c-953c-517e577fab5e",
+              "targetStep": "/api/3/workflow_steps/312ab31f-8881-4d43-81cc-8b60e9b9b643"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c03a68fd-bfb4-4f23-94b3-92671a9e599c",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "87992044-45c7-448d-8762-8e6f65db3782",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the inbound blacklisted URLs or specific inbound blacklisted URLs based on the input parameters you have specified. To return blacklisted URLs for specific protection groups, specify a list of protection group IDs or central configuration IDs. An ID of -1 selects URLs that are globally blacklisted.",
+          "description": "Retrieves all the inbound blocked-list URLs or specific inbound blocked-list URLs based on the host addresses, protection group IDs (PGID), central configuration IDs (CID), or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
           "name": "Get Inbound Blacklisted URLs",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1457,16 +1419,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/bc50f698-c613-456f-bddd-550c42af0a04",
+          "triggerStep": "/api/3/workflow_steps/3c1c2d32-224a-451d-ac97-b37ff7d585d4",
           "steps": [
             {
-              "uuid": "bc50f698-c613-456f-bddd-550c42af0a04",
+              "uuid": "3c1c2d32-224a-451d-ac97-b37ff7d585d4",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "34468abe-bce7-464d-9c61-a149dae26e1f",
+                "route": "3df48767-33f5-45de-a3a3-34c82aebc885",
                 "title": "Netscout AED: Get Inbound Blacklisted URLs",
                 "resources": [
                   "alerts"
@@ -1486,7 +1448,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "350e1b76-1e2f-4465-9451-0189a6b1c039",
+              "uuid": "7035fbd8-524e-4e6c-8fcd-935979ebfa3c",
               "@type": "WorkflowStep",
               "name": "Get Inbound Blacklisted URLs",
               "description": null,
@@ -1495,11 +1457,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "url": "",
-                  "cid_pgid": "Protection Group ID",
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -1517,21 +1475,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "8633e3cb-317a-4e98-87a1-3d2dbf72af11",
+              "uuid": "578a2da7-736b-4792-85ee-14e4df595e80",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Inbound Blacklisted URLs",
-              "sourceStep": "/api/3/workflow_steps/bc50f698-c613-456f-bddd-550c42af0a04",
-              "targetStep": "/api/3/workflow_steps/350e1b76-1e2f-4465-9451-0189a6b1c039"
+              "sourceStep": "/api/3/workflow_steps/3c1c2d32-224a-451d-ac97-b37ff7d585d4",
+              "targetStep": "/api/3/workflow_steps/7035fbd8-524e-4e6c-8fcd-935979ebfa3c"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "62802f1f-5744-43a2-a26a-a561617b8d3e",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "6369746e-9f3a-47bf-8562-296fae3b4640",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more URLs from the Netscout AED blacklist for a specific protection group or for all protection groups based on the URLs and protection group IDs (pgid) or central configuration IDs (cid) you have specified.",
+          "description": "Removes one or more URLs from the Netscout AED blocked-list for a specific protection group or for all protection groups based on the URLs and protection group IDs (PGID) or central configuration IDs (CID) you have specified.",
           "name": "Remove Inbound Blacklisted URLs",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1543,16 +1501,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c7c5e71f-5002-415c-9d89-20e95710e829",
+          "triggerStep": "/api/3/workflow_steps/9f5a0c0f-cb62-476a-b2c3-2986d3359b35",
           "steps": [
             {
-              "uuid": "c7c5e71f-5002-415c-9d89-20e95710e829",
+              "uuid": "9f5a0c0f-cb62-476a-b2c3-2986d3359b35",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "dd878ec6-0ada-4dd1-bfcb-d1619b6f4075",
+                "route": "c9993aea-95aa-4b22-8a06-e5e9f2d86c38",
                 "title": "Netscout AED: Remove Inbound Blacklisted URLs",
                 "resources": [
                   "alerts"
@@ -1572,7 +1530,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "16dc31ed-51a0-4208-a9cb-9ebe54fe041f",
+              "uuid": "fedd9905-fa90-40c8-adac-61b6f7e7d52e",
               "@type": "WorkflowStep",
               "name": "Remove Inbound Blacklisted URLs",
               "description": null,
@@ -1581,7 +1539,6 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "url": "",
                   "cid_pgid": "Protection Group ID"
                 },
                 "version": "1.0.0",
@@ -1600,21 +1557,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "c86b352b-e5c4-43c0-a470-6992fa59f991",
+              "uuid": "304a7d0b-6f8a-4a7b-926d-cdcc0d3fc87a",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Inbound Blacklisted URLs",
-              "sourceStep": "/api/3/workflow_steps/c7c5e71f-5002-415c-9d89-20e95710e829",
-              "targetStep": "/api/3/workflow_steps/16dc31ed-51a0-4208-a9cb-9ebe54fe041f"
+              "sourceStep": "/api/3/workflow_steps/9f5a0c0f-cb62-476a-b2c3-2986d3359b35",
+              "targetStep": "/api/3/workflow_steps/fedd9905-fa90-40c8-adac-61b6f7e7d52e"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "e8a8ffba-8da1-485a-901e-94be91bd435d",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "1d0af57f-c023-4d5b-b3d7-f914eac110de",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified.",
+          "description": "Adds one or more hosts to the Netscout AED outbound blocked-list based on the host addresses or CIDRs you have specified.",
           "name": "Add Outbound Blacklist Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1626,16 +1583,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/7140b543-3201-49f2-9640-cd6496b4f554",
+          "triggerStep": "/api/3/workflow_steps/622815af-7664-4824-9abf-c0d3f7dc52d6",
           "steps": [
             {
-              "uuid": "7140b543-3201-49f2-9640-cd6496b4f554",
+              "uuid": "622815af-7664-4824-9abf-c0d3f7dc52d6",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b75a316a-a4e3-4bd4-bd3c-e5c87815bc26",
+                "route": "92844bf0-710d-44c0-ad2e-206cd7d34bbb",
                 "title": "Netscout AED: Add Outbound Blacklist Hosts",
                 "resources": [
                   "alerts"
@@ -1655,7 +1612,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "9e56e92a-3b3b-4426-82f4-c871f59d921d",
+              "uuid": "f42b43a5-8be7-4a34-a8cb-b5073924ed03",
               "@type": "WorkflowStep",
               "name": "Add Outbound Blacklist Hosts",
               "description": null,
@@ -1663,9 +1620,7 @@
               "arguments": {
                 "name": "Netscout AED",
                 "config": "''",
-                "params": {
-                  "hostAddress": ""
-                },
+                "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
                 "operation": "add_outbound_blacklist_hosts",
@@ -1682,21 +1637,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "75dd7ad4-6f38-4c4a-af7b-e6e810847049",
+              "uuid": "7304845a-6042-47ef-90fa-85a168a2c564",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Outbound Blacklist Hosts",
-              "sourceStep": "/api/3/workflow_steps/7140b543-3201-49f2-9640-cd6496b4f554",
-              "targetStep": "/api/3/workflow_steps/9e56e92a-3b3b-4426-82f4-c871f59d921d"
+              "sourceStep": "/api/3/workflow_steps/622815af-7664-4824-9abf-c0d3f7dc52d6",
+              "targetStep": "/api/3/workflow_steps/f42b43a5-8be7-4a34-a8cb-b5073924ed03"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ffcb88d8-2b42-4688-8502-1bf8365e4026",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "fc35460c-ad02-4b92-829b-6e6b0ee873c8",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the outbound blacklisted hosts or specific outbound blacklisted hosts based on the input parameters you have specified.",
+          "description": "Retrieves all the outbound blocked-list hosts or specific outbound blocked-list hosts based on the host addresses, or other filter criteria you have specified. An ID of -1 selects domains that are in the global blocked-list.",
           "name": "Get Outbound Blacklisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1708,16 +1663,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/304a9723-970a-4caf-900f-faf863ad36ba",
+          "triggerStep": "/api/3/workflow_steps/0e116365-416f-451c-a969-4c1b260b85d5",
           "steps": [
             {
-              "uuid": "304a9723-970a-4caf-900f-faf863ad36ba",
+              "uuid": "0e116365-416f-451c-a969-4c1b260b85d5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d3b0365a-a8d4-4177-83ef-508888322fcd",
+                "route": "5e68e4f1-18b4-498e-84e1-d4ef6d53c5fd",
                 "title": "Netscout AED: Get Outbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
@@ -1737,7 +1692,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "f23bda2c-171a-454d-b940-fe0849f6c1b6",
+              "uuid": "524bf0e6-4af2-4bae-aaf6-9b116a5ad778",
               "@type": "WorkflowStep",
               "name": "Get Outbound Blacklisted Hosts",
               "description": null,
@@ -1746,11 +1701,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
-                  "updateTime": 0,
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "updateTime": 0
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -1768,21 +1719,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1446d0b8-0e19-4cdf-b3f8-af5cffe1525e",
+              "uuid": "0fbbc9e9-45c0-4eb1-9dd6-c3d6f64dd257",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Outbound Blacklisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/304a9723-970a-4caf-900f-faf863ad36ba",
-              "targetStep": "/api/3/workflow_steps/f23bda2c-171a-454d-b940-fe0849f6c1b6"
+              "sourceStep": "/api/3/workflow_steps/0e116365-416f-451c-a969-4c1b260b85d5",
+              "targetStep": "/api/3/workflow_steps/524bf0e6-4af2-4bae-aaf6-9b116a5ad778"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d9bd4f0c-a69d-4cd7-aadb-cfdfcc75ccd3",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "74011055-95a4-4e87-bf20-1fa3465d33ef",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound blacklist based on the host addresses or CIDRs you have specified. ",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound blocked-list based on the host addresses or CIDRs you have specified.",
           "name": "Remove Outbound Blacklisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1794,16 +1745,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/4377d969-b058-4e66-86f3-87626af339e1",
+          "triggerStep": "/api/3/workflow_steps/4b9969c2-af8e-4f50-b99d-4d46e3f94bb8",
           "steps": [
             {
-              "uuid": "4377d969-b058-4e66-86f3-87626af339e1",
+              "uuid": "4b9969c2-af8e-4f50-b99d-4d46e3f94bb8",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "acdc6a4a-b515-40f3-93db-1296414f0fba",
+                "route": "8bbfa8a9-d3e3-4775-8472-38ab4845a870",
                 "title": "Netscout AED: Remove Outbound Blacklisted Hosts",
                 "resources": [
                   "alerts"
@@ -1823,7 +1774,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "8c4b9805-044d-45c0-b634-62de2e174348",
+              "uuid": "0f9fd798-a446-4389-be43-474f628c9e4e",
               "@type": "WorkflowStep",
               "name": "Remove Outbound Blacklisted Hosts",
               "description": null,
@@ -1831,9 +1782,7 @@
               "arguments": {
                 "name": "Netscout AED",
                 "config": "''",
-                "params": {
-                  "hostAddress": ""
-                },
+                "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
                 "operation": "remove_outbound_blacklisted_hosts",
@@ -1850,21 +1799,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "7cf9dff1-a101-4321-a959-05a4cf680783",
+              "uuid": "e4340700-bd71-45d7-a95b-0dbd159f97fd",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Outbound Blacklisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/4377d969-b058-4e66-86f3-87626af339e1",
-              "targetStep": "/api/3/workflow_steps/8c4b9805-044d-45c0-b634-62de2e174348"
+              "sourceStep": "/api/3/workflow_steps/4b9969c2-af8e-4f50-b99d-4d46e3f94bb8",
+              "targetStep": "/api/3/workflow_steps/0f9fd798-a446-4389-be43-474f628c9e4e"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "5f443a49-e8c3-4e7f-85e7-d6119e6a821e",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "58ce8c9f-44fc-4c8d-805a-12f728c2e735",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Adds one or more hosts to the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified.",
+          "description": "Adds one or more hosts to the Netscout AED outbound allowed-list based on the host addresses or CIDRs you have specified.",
           "name": "Add Outbound Whitelist Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1876,16 +1825,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/23831494-b0f9-46f3-8456-eeffe244ecfd",
+          "triggerStep": "/api/3/workflow_steps/531a3688-7e30-4c6c-94e6-f6d5b2cd79eb",
           "steps": [
             {
-              "uuid": "23831494-b0f9-46f3-8456-eeffe244ecfd",
+              "uuid": "531a3688-7e30-4c6c-94e6-f6d5b2cd79eb",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "ae125f78-3459-40f0-b0d5-2bb1049e6f47",
+                "route": "f55577c0-ff20-44ce-befe-3aa56cdb7e55",
                 "title": "Netscout AED: Add Outbound Whitelist Hosts",
                 "resources": [
                   "alerts"
@@ -1905,7 +1854,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "b96fd60c-2273-4756-8984-8841ae5f356d",
+              "uuid": "338fb11b-ff31-477d-b496-7b6cf0296864",
               "@type": "WorkflowStep",
               "name": "Add Outbound Whitelist Hosts",
               "description": null,
@@ -1913,9 +1862,7 @@
               "arguments": {
                 "name": "Netscout AED",
                 "config": "''",
-                "params": {
-                  "hostAddress": ""
-                },
+                "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
                 "operation": "add_outbound_whitelisted_hosts",
@@ -1932,21 +1879,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "297504b4-3eb2-422e-8d5d-9bd28cfe7866",
+              "uuid": "d032c6fb-31cc-4a88-86c8-f8fe6cf2316d",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Outbound Whitelist Hosts",
-              "sourceStep": "/api/3/workflow_steps/23831494-b0f9-46f3-8456-eeffe244ecfd",
-              "targetStep": "/api/3/workflow_steps/b96fd60c-2273-4756-8984-8841ae5f356d"
+              "sourceStep": "/api/3/workflow_steps/531a3688-7e30-4c6c-94e6-f6d5b2cd79eb",
+              "targetStep": "/api/3/workflow_steps/338fb11b-ff31-477d-b496-7b6cf0296864"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ab6f6a5d-6adb-46cf-b8fe-50af17144c89",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "0848a9a8-9c23-4b39-a29f-d899de23eff7",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Retrieves all the outbound whitelisted hosts or specific outbound whitelisted hosts based on the input parameters you have specified.",
+          "description": "Retrieves all the outbound allowed-list hosts or specific outbound allowed-list hosts based on the host addresses, or other filter criteria you have specified. An ID of -1 selects domains that are in the global allowed-list.",
           "name": "Get Outbound Whitelisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -1958,16 +1905,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5759982a-8e38-4a8c-b09e-4ac3ebb2565b",
+          "triggerStep": "/api/3/workflow_steps/6837d578-10eb-465b-9edf-3041d7b8dc93",
           "steps": [
             {
-              "uuid": "5759982a-8e38-4a8c-b09e-4ac3ebb2565b",
+              "uuid": "6837d578-10eb-465b-9edf-3041d7b8dc93",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "126577f4-da3b-427b-b9e3-7b515a4b520a",
+                "route": "aeb0da28-8104-4f4d-a14c-8cfbd8b62004",
                 "title": "Netscout AED: Get Outbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
@@ -1987,7 +1934,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "2433a92d-5860-4026-8096-f8432082b0a1",
+              "uuid": "f28a1627-1ded-4f76-a994-773eee65b2d9",
               "@type": "WorkflowStep",
               "name": "Get Outbound Whitelisted Hosts",
               "description": null,
@@ -1996,11 +1943,7 @@
                 "name": "Netscout AED",
                 "config": "''",
                 "params": {
-                  "hostAddress": "",
-                  "updateTime": 0,
-                  "direction": "",
-                  "page": "",
-                  "perPage": ""
+                  "updateTime": 0
                 },
                 "version": "1.0.0",
                 "connector": "arbor-aed",
@@ -2018,21 +1961,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "c50751be-50eb-478e-934c-cb4d2b069fee",
+              "uuid": "237c83c6-3939-4ce3-9dfb-27e99e5ede99",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Outbound Whitelisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/5759982a-8e38-4a8c-b09e-4ac3ebb2565b",
-              "targetStep": "/api/3/workflow_steps/2433a92d-5860-4026-8096-f8432082b0a1"
+              "sourceStep": "/api/3/workflow_steps/6837d578-10eb-465b-9edf-3041d7b8dc93",
+              "targetStep": "/api/3/workflow_steps/f28a1627-1ded-4f76-a994-773eee65b2d9"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "33e93b32-9197-4e7c-81fc-694433448cbe",
-          "collection": "/api/3/workflow_collections/d216cb4d-f407-48e0-8d62-8ad2c29d2767",
+          "uuid": "30103388-a0e1-4df0-b6d4-18f00157e267",
+          "collection": "/api/3/workflow_collections/97d7d09f-518e-4aa3-9626-ca1a858249c9",
           "triggerLimit": null,
-          "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound whitelist based on the host addresses or CIDRs you have specified. ",
+          "description": "Removes one or more hosts or CIDRs from the Netscout AED outbound allowed-list based on the host addresses or CIDRs you have specified.",
           "name": "Remove Outbound Whitelisted Hosts",
           "tag": "#Netscout AED",
           "recordTags": [
@@ -2044,16 +1987,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/72e11160-519c-49d5-b2b2-22c01ee21464",
+          "triggerStep": "/api/3/workflow_steps/ec9c92e9-cce7-478e-931a-fc85acb9b48f",
           "steps": [
             {
-              "uuid": "72e11160-519c-49d5-b2b2-22c01ee21464",
+              "uuid": "ec9c92e9-cce7-478e-931a-fc85acb9b48f",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "f02b43d0-46ff-48b3-8ca0-339682f84849",
+                "route": "a6867f4a-0cd8-41ac-96d3-d54e85e51ae4",
                 "title": "Netscout AED: Remove Outbound Whitelisted Hosts",
                 "resources": [
                   "alerts"
@@ -2073,7 +2016,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "1660485f-aa34-443d-b4b6-08a176844dfc",
+              "uuid": "158315eb-27c3-4aad-8570-ba5c0f24dec4",
               "@type": "WorkflowStep",
               "name": "Remove Outbound Whitelisted Hosts",
               "description": null,
@@ -2081,9 +2024,7 @@
               "arguments": {
                 "name": "Netscout AED",
                 "config": "''",
-                "params": {
-                  "hostAddress": ""
-                },
+                "params": [],
                 "version": "1.0.0",
                 "connector": "arbor-aed",
                 "operation": "remove_outbound_whitelisted_hosts",
@@ -2100,12 +2041,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1ddcd22c-8035-4b73-b1fd-606d753ed872",
+              "uuid": "d1a87989-7268-4769-beac-b7825414b0aa",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Remove Outbound Whitelisted Hosts",
-              "sourceStep": "/api/3/workflow_steps/72e11160-519c-49d5-b2b2-22c01ee21464",
-              "targetStep": "/api/3/workflow_steps/1660485f-aa34-443d-b4b6-08a176844dfc"
+              "sourceStep": "/api/3/workflow_steps/ec9c92e9-cce7-478e-931a-fc85acb9b48f",
+              "targetStep": "/api/3/workflow_steps/158315eb-27c3-4aad-8570-ba5c0f24dec4"
             }
           ]
         }

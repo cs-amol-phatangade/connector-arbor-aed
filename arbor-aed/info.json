@@ -48,7 +48,7 @@
     {
       "title": "Get Countries",
       "operation": "get_countries",
-      "description": "Retrieves the Arbor Networks AED country codes and names based on the country names and other filter criteria you have specified.",
+      "description": "Retrieves the Netscout AED country codes and names based on the country names and other filter criteria you have specified.",
       "category": "investigation",
       "annotation": "get_countries",
       "output_schema": {
@@ -142,7 +142,7 @@
     {
       "title": "Create Inbound Protection Groups",
       "operation": "create_inbound_protection_groups",
-      "description": "Creates an Arbor Networks AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
+      "description": "Creates an Netscout AED protection group based on the protection group name, IP addresses, protection group server type, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_inbound_protection_groups",
       "output_schema": {
@@ -239,7 +239,7 @@
     {
       "title": "Get Inbound Protection Groups",
       "operation": "get_inbound_protection_groups",
-      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Arbor Networks AED protection groups based on the protection group identifier, name, and other filter criteria you have specified.",
+      "description": "Retrieves all the inbound protection groups or specific inbound protection groups from the Netscout AED protection groups based on the protection group identifier, name, and other filter criteria you have specified.",
       "category": "investigation",
       "annotation": "get_inbound_protection_groups",
       "output_schema": {
