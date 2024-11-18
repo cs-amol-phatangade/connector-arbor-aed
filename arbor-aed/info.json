@@ -2039,6 +2039,49 @@
           "required": true
         },
         {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the blacklist in Netscout AED."
+        },
+        {
           "title": "Annotation",
           "type": "text",
           "name": "annotation",
@@ -2184,6 +2227,49 @@
           "visible": true,
           "editable": true,
           "required": true
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the blacklist in Netscout AED."
         }
       ],
       "enabled": true
@@ -2213,6 +2299,49 @@
           "visible": true,
           "editable": true,
           "required": true
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to add the hosts to the whtelist in Netscout AED."
         },
         {
           "title": "Annotation",
@@ -2360,6 +2489,49 @@
           "visible": true,
           "editable": true,
           "required": true
+        },
+        {
+          "title": "Select CID or PGID",
+          "name": "cid_pgid",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Central Configuration ID",
+            "Protection Group ID"
+          ],
+          "onchange": {
+            "Central Configuration ID": [
+              {
+                "title": "Central Configuration ID",
+                "name": "cid",
+                "type": "integer",
+                "description": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "tooltip": "A specific central configuration ID or -1 for global. Cannot be used with the Protection Group ID (pgid) parameter.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ],
+            "Protection Group ID": [
+              {
+                "title": "Protection Group ID",
+                "name": "pgid",
+                "type": "integer",
+                "description": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "tooltip": "A specific protection group ID or -1 for global. Cannot be used with the Central Configuration ID (cid) parameter",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "value": -1
+              }
+            ]
+          },
+          "value": "Protection Group ID",
+          "tooltip": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Netscout AED.",
+          "description": "Select Central Configuration ID or Protection Group ID based on which you want to remove the hosts from the whitelist in Netscout AED."
         }
       ],
       "enabled": true
