@@ -1,15 +1,15 @@
 {
   "name": "arbor-aed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "label": "Netscout AED",
   "description": "Netscout Arbor Edge Defense (AED) secures the internet data center edge from threats against availability — specifically from application-layer, distributed denial of service (DDoS) attacks.",
   "publisher": "Fortinet",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Network Security",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/netscout-arbor-edge-defense-aed/713/netscout-aed-v1-0-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
