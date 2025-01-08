@@ -2538,7 +2538,7 @@
     },
     {
       "operation": "execute_an_api_call",
-      "title": "Execute an API Call",
+      "title": "Execute an API Request",
       "annotation": "send_custom_request",
       "description": "Sends an API request to any API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs. ",
       "category": "investigation",
